@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<NLCSValidatieregels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace NLCSValidatieRegels.xsd"
+		     xmlns="NLCSValidatieRegelsNameSpace">
+	<NlcsValidatieregel>
+		<nummer>0</nummer>
+		<naam>naam</naam>
+		<beschrijving>beschrijving</beschrijving>
+		<soort>Bestand</soort>
+		<niveau>Fout</niveau>
+		<definitie>definitie</definitie>
+		<toelichting>toelichting</toelichting>
+		<Scope>
+			<TekeningSoort>Bestaande Situatie</TekeningSoort>
+			<NlcsStatus status="B" />
+			<NlcsBedrijfstoestand bedrijfstoestand="" />
+		</Scope>
+	</NlcsValidatieregel>
+</NLCSValidatieregels>

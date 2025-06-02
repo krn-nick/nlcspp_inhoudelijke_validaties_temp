@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="NLCSValidatieRegelsNameSpace" 
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   targetNamespace="NLCSValidatieRegelsNameSpace"
+		   elementFormDefault="qualified" 
+		   attributeFormDefault="unqualified" >
+	<xs:element name="NLCSValidatieregels">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NlcsValidatieregel" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nummer" type="xs:integer"/>
+							<xs:element name="naam" type="xs:string"/>
+							<xs:element name="beschrijving" type="xs:string"/> <!-- Een korte beschrijving -->
+							<xs:element name="soort" type="SoortValidatieRegel"/>
+							<xs:element name="niveau" type="NiveauRegel"/> <!-- Bijv. deelrevisie waarschuwing. Deze naar Scope verplaatsen? -->
+							<xs:element name="definitie" type="xs:string"/> <!-- operationaliseerbaar naar Schematron -->
+							<xs:element name="toelichting" type="xs:string"/> <!-- Wat je niet kwijt kan in beschrijving of definitie -->
+							<xs:element name="NlcsObject" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="naam" type="xs:string" use="required"/> <!-- Hier de lijst uit NLCS++ XSD? -->
+									<xs:attribute name="soortObject" type="SoortNlcsObject" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Scope" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="TekeningSoort" type="NlcsTekeningSoort"/>
+										<xs:element name="NlcsStatus" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="status" type="NlcsStatus" use="required"/>
+												<xs:attribute name="beschrijving" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="NlcsBedrijfstoestand" minOccurs="1" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="bedrijfstoestand" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<!-- Ter discussie -->
+										<xs:element name="Netbeheerder" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="naam" type="Netbeheerder" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!--- Type Definities -->
+	<xs:simpleType name="SoortNlcsObject">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LS"/>
+			<xs:enumeration value="MS"/>
+			<xs:enumeration value="HS"/>
+			<xs:enumeration value="Station/Kast"/>
+			<xs:enumeration value="Algemeen"/>
+			<xs:enumeration value="Telecom"/>
+			<xs:enumeration value="Gas"/>
+			<xs:enumeration value="KB"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SoortValidatieRegel">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bestand"/>
+			<xs:enumeration value="Document"/>
+			<xs:enumeration value="Geometrie"/>
+			<xs:enumeration value="Verplichte waarde"/>
+			<xs:enumeration value="Inhoud waarde"/>
+			<xs:enumeration value="Topologie"/>
+			<xs:enumeration value="Netlogica"/>
+			<xs:enumeration value="Consistentie"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NiveauRegel">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Fout"/>
+			<xs:enumeration value="Waarschuwing"/>
+			<xs:enumeration value="Informerend"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NlcsTekeningSoort">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bestaande Situatie"/>
+			<xs:enumeration value="Definitief Ontwerp"/>
+			<xs:enumeration value="Deelrevisie"/>
+			<xs:enumeration value="Eindrevisie"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NlcsStatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="N"/>
+			<xs:enumeration value="R"/>
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="V"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Netbeheerder">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Enexis"/>
+			<xs:enumeration value="Liander"/>
+			<xs:enumeration value="Stedin"/>			
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
