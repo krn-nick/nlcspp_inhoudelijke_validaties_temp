@@ -3,70 +3,10 @@
 		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		   targetNamespace="NLCSValidatieRegelsNameSpace"
 		   elementFormDefault="qualified" 
-		   attributeFormDefault="unqualified" >
-	<xs:element name="NLCSValidatieregels">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="NlcsValidatieregel" minOccurs="1" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="nummer" type="xs:integer"/>
-							<xs:element name="naam" type="xs:string"/>
-							<xs:element name="beschrijving" type="xs:string"/> <!-- Een korte beschrijving -->
-							<xs:element name="soort" type="SoortValidatieRegel"/>
-							<xs:element name="niveau" type="NiveauRegel"/> <!-- Bijv. deelrevisie waarschuwing. Deze naar Scope verplaatsen? -->
-							<xs:element name="definitie" type="xs:string"/> <!-- operationaliseerbaar naar Schematron -->
-							<xs:element name="toelichting" type="xs:string"/> <!-- Wat je niet kwijt kan in beschrijving of definitie -->
-							<xs:element name="NlcsObject" minOccurs="0" maxOccurs="unbounded">
-								<xs:complexType>
-									<xs:attribute name="naam" type="xs:string" use="required"/> <!-- Hier de lijst uit NLCS++ XSD? -->
-									<xs:attribute name="soortObject" type="SoortNlcsObject" use="required"/>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="Scope" minOccurs="1" maxOccurs="unbounded">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="TekeningSoort" type="NlcsTekeningSoort"/>
-										<xs:element name="NlcsStatus" minOccurs="1" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:attribute name="status" type="NlcsStatus" use="required"/>
-												<xs:attribute name="beschrijving" type="xs:string"/>
-											</xs:complexType>
-										</xs:element>
-										<xs:element name="NlcsBedrijfstoestand" minOccurs="1" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:attribute name="bedrijfstoestand" type="xs:string" use="required"/>
-											</xs:complexType>
-										</xs:element>
-										<!-- Ter discussie -->
-										<xs:element name="Netbeheerder" minOccurs="0" maxOccurs="unbounded">
-											<xs:complexType>
-												<xs:attribute name="naam" type="Netbeheerder" use="required"/>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<!--- Type Definities -->
-	<xs:simpleType name="SoortNlcsObject">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="LS"/>
-			<xs:enumeration value="MS"/>
-			<xs:enumeration value="HS"/>
-			<xs:enumeration value="Station/Kast"/>
-			<xs:enumeration value="Algemeen"/>
-			<xs:enumeration value="Telecom"/>
-			<xs:enumeration value="Gas"/>
-			<xs:enumeration value="KB"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="SoortValidatieRegel">
+		   attributeFormDefault="unqualified">
+	
+	<!--- Type Definities -->	
+	<xs:simpleType name="SoortValidatieRegelType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Bestand"/>
 			<xs:enumeration value="Document"/>
@@ -78,14 +18,37 @@
 			<xs:enumeration value="Consistentie"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="NiveauRegel">
+	<xs:simpleType name="NiveauRegelType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Fout"/>
 			<xs:enumeration value="Waarschuwing"/>
 			<xs:enumeration value="Informerend"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="NlcsTekeningSoort">
+	<xs:simpleType name="ObjectSoortType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="LS"/>
+			<xs:enumeration value="MS"/>
+			<xs:enumeration value="HS"/>
+			<xs:enumeration value="Station/Kast"/>
+			<xs:enumeration value="Algemeen"/>
+			<xs:enumeration value="Telecom"/>
+			<xs:enumeration value="Gas"/>
+			<xs:enumeration value="KB"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	<xs:complexType name="ValidatieObjectType">
+		<xs:sequence>
+			<xs:element name="naam"        type="xs:string"       minOccurs="1" maxOccurs="1"/>
+			<xs:element name="soortObject" type="ObjectSoortType" minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ValidatieObjectVerzamelingType">
+		<xs:sequence>
+			<xs:element name="validatieObject" type="ValidatieObjectType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="TekeningSoortType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Bestaande Situatie"/>
 			<xs:enumeration value="Definitief Ontwerp"/>
@@ -93,20 +56,64 @@
 			<xs:enumeration value="Eindrevisie"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="NlcsStatus">
+	<xs:simpleType name="StatusType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="B"/>
-			<xs:enumeration value="N"/>
-			<xs:enumeration value="R"/>
-			<xs:enumeration value="T"/>
-			<xs:enumeration value="V"/>
+			<xs:enumeration value="BESTAAND"/>
+			<xs:enumeration value="NIEUW"/>
+			<xs:enumeration value="REVISIE"/>
+			<xs:enumeration value="TIJDELIJK"/>
+			<xs:enumeration value="VERWIJDERD"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="Netbeheerder">
+	<xs:complexType name="StatusVerzamelingType">
+		<xs:sequence>
+			<xs:element name="status" type="StatusType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="BedrijfsToestandType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Enexis"/>
-			<xs:enumeration value="Liander"/>
-			<xs:enumeration value="Stedin"/>			
+			<xs:enumeration value="IN BEDRIJF"/>
+			<xs:enumeration value="RESERVE"/>
+			<xs:enumeration value="VERLATEN"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="BedrijfsToestandVerzamelingType">
+		<xs:sequence>
+			<xs:element name="bedrijfstoestand" type="StatusType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ScopeType">
+		<xs:sequence>
+			<xs:element name="tekeningSoort" type="TekeningSoortType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="statussen" type="StatusVerzamelingType" minOccurs="1" maxOccurs="1" />
+			<xs:element name="bedrijfsToestanden" type="BedrijfsToestandVerzamelingType" minOccurs="1" maxOccurs="1"/>			
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ScopeVerzamelingType">
+		<xs:sequence>
+			<xs:element name="scope" type="ScopeType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ValidatieRegelType">
+		<xs:sequence>
+			<xs:element name="nummer" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="naam" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="beschrijving" type="xs:string" minOccurs="1" maxOccurs="1"/> <!-- Een korte beschrijving -->
+			<xs:element name="soort" type="SoortValidatieRegelType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="niveau" type="NiveauRegelType" minOccurs="1" maxOccurs="1"/> <!-- Bijv. deelrevisie waarschuwing. Deze naar Scope verplaatsen? -->
+			<xs:element name="definitie" type="xs:string" minOccurs="1" maxOccurs="1"/> <!-- operationaliseerbaar naar Schematron -->
+			<xs:element name="toelichting" type="xs:string" minOccurs="1" maxOccurs="1"/> <!-- Wat je niet kwijt kan in beschrijving of definitie -->
+			<xs:element name="validatieObjecten" type="ValidatieObjectVerzamelingType" minOccurs="1" maxOccurs="1" />
+			<xs:element name="scopes" type="ScopeVerzamelingType" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="NLCSValidatieregels">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="validatieRegel" type="ValidatieRegelType" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>
