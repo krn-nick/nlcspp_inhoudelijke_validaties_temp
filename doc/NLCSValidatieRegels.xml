@@ -3,8 +3,8 @@
 		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace NLCSValidatieRegels.xsd"
 		     xmlns="NLCSValidatieRegelsNameSpace">
 	<validatieRegel>
-		<nummer>R1</nummer>
-		<naam>naam</naam>
+		<nummer>R1R</nummer>
+		<naam>Regel 1</naam>
 		<beschrijving>beschrijving</beschrijving>
 		<soort>Bestand</soort>
 		<niveau>Fout</niveau>
