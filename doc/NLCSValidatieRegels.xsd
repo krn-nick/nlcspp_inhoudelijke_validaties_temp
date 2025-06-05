@@ -79,7 +79,7 @@
 	</xs:simpleType>
 	<xs:complexType name="BedrijfsToestandVerzamelingType">
 		<xs:sequence>
-			<xs:element name="bedrijfstoestand" type="StatusType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="bedrijfstoestand" type="BedrijfsToestandType" minOccurs="1" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ScopeType">
@@ -97,7 +97,7 @@
 	
 	<xs:complexType name="ValidatieRegelType">
 		<xs:sequence>
-			<xs:element name="nummer" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="nummer" type="xs:ID" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="naam" type="xs:string" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="beschrijving" type="xs:string" minOccurs="1" maxOccurs="1"/> <!-- Een korte beschrijving -->
 			<xs:element name="soort" type="SoortValidatieRegelType" minOccurs="1" maxOccurs="1"/>
@@ -105,7 +105,7 @@
 			<xs:element name="definitie" type="xs:string" minOccurs="1" maxOccurs="1"/> <!-- operationaliseerbaar naar Schematron -->
 			<xs:element name="toelichting" type="xs:string" minOccurs="1" maxOccurs="1"/> <!-- Wat je niet kwijt kan in beschrijving of definitie -->
 			<xs:element name="validatieObjecten" type="ValidatieObjectVerzamelingType" minOccurs="1" maxOccurs="1" />
-			<xs:element name="scopes" type="ScopeVerzamelingType" minOccurs="1" maxOccurs="unbounded" />
+			<xs:element name="scopes" type="ScopeVerzamelingType" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	

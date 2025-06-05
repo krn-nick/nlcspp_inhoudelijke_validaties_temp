@@ -3,7 +3,7 @@
 		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace NLCSValidatieRegels.xsd"
 		     xmlns="NLCSValidatieRegelsNameSpace">
 	<validatieRegel>
-		<nummer>1</nummer>
+		<nummer>R1</nummer>
 		<naam>naam</naam>
 		<beschrijving>beschrijving</beschrijving>
 		<soort>Bestand</soort>
@@ -23,7 +23,33 @@
 					<status>BESTAAND</status>
 				</statussen>
 				<bedrijfsToestanden>
-					<bedrijfstoestand>BESTAAND</bedrijfstoestand>
+					<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				</bedrijfsToestanden>
+			</scope>
+		</scopes>
+	</validatieRegel>
+	<validatieRegel>
+		<nummer>R2</nummer>
+		<naam>naam</naam>
+		<beschrijving>beschrijving</beschrijving>
+		<soort>Bestand</soort>
+		<niveau>Fout</niveau>
+		<definitie>definitie</definitie>
+		<toelichting>toelichting</toelichting>
+		<validatieObjecten>
+			<validatieObject>
+				<naam>naam</naam>
+				<soortObject>LS</soortObject>
+			</validatieObject>
+		</validatieObjecten>
+		<scopes>
+			<scope>
+				<tekeningSoort>Bestaande Situatie</tekeningSoort>
+				<statussen>
+					<status>BESTAAND</status>
+				</statussen>
+				<bedrijfsToestanden>
+					<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
 				</bedrijfsToestanden>
 			</scope>
 		</scopes>
