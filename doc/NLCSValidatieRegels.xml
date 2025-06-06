@@ -2,6 +2,7 @@
 <NLCSValidatieregels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace NLCSValidatieRegels.xsd"
 		     xmlns="NLCSValidatieRegelsNameSpace">
+<<<<<<< Upstream, based on branch 'main' of https://github.com/krn-nick/nlcspp_inhoudelijke_validaties_temp.git
 	<validatieRegel>
 		<nummer>R1R</nummer>
 		<naam>Regel 1</naam>
@@ -54,4 +55,69 @@
 			</scope>
 		</scopes>
 	</validatieRegel>
+=======
+	<validatieRegels>
+		<validatieRegel>
+			<nummer>idvalue0</nummer>
+			<naam>naam</naam>
+			<beschrijving>beschrijving</beschrijving>
+			<soort>Bestand</soort>
+			<definitie>definitie</definitie>
+			<toelichting>toelichting</toelichting>
+			<validatieObjecten>
+				<validatieObject>
+					<naam>MSkabel</naam>
+					<soortObject>LS</soortObject>
+				</validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>idvalue1</nummer>
+			<naam>naam</naam>
+			<beschrijving>beschrijving</beschrijving>
+			<soort>Bestand</soort>
+			<definitie>definitie</definitie>
+			<toelichting>toelichting</toelichting>
+			<validatieObjecten>
+				<validatieObject>
+					<naam>MSkabel</naam>
+					<soortObject>MS</soortObject>
+				</validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>idvalue2</nummer>
+			<naam>naam</naam>
+			<beschrijving>beschrijving</beschrijving>
+			<soort>Bestand</soort>
+			<definitie>definitie</definitie>
+			<toelichting>toelichting</toelichting>
+			<validatieObjecten>
+				<validatieObject>
+					<naam>AprojectReferentie</naam>
+					<soortObject>MS</soortObject>
+				</validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+	</validatieRegels>
+	<scopes>
+		<scope>
+			<tekeningSoort>Bestaande Situatie</tekeningSoort>
+			<statussen>
+				<status>BESTAAND</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<niveau>Fout</niveau>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel>
+					<scopeValidatieRegelNummer>
+						idvalue2
+					</scopeValidatieRegelNummer>
+				</scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+	</scopes>
+>>>>>>> ebdbdae Scopes zijn nu apart gedefinieerd en met een referentie gekoppeld aan de validatieRegel.
 </NLCSValidatieregels>

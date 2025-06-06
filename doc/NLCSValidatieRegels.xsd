@@ -25,6 +25,22 @@
 			<xs:enumeration value="Informerend"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="NLCSObjectType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AprojectReferentie"/>
+			<xs:enumeration value="LSkast"/>
+			<xs:enumeration value="LSmof"/>
+			<xs:enumeration value="LSkabel"/>
+			<xs:enumeration value="LSoverdrachtspunt"/>	
+			<xs:enumeration value="OVLoverdrachtspunt"/>			
+			<xs:enumeration value="MSstation"/>
+			<xs:enumeration value="MSoverdrachtspunt"/>
+			<xs:enumeration value="MSkabel"/>
+			<xs:enumeration value="MSmof"/>
+			<xs:enumeration value="Amantelbuis"/>
+			<xs:enumeration value="AmantelbuisInhoud"/>
+		</xs:restriction>
+	</xs:simpleType>	
 	<xs:simpleType name="ObjectSoortType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="LS"/>
@@ -39,7 +55,7 @@
 	</xs:simpleType>	
 	<xs:complexType name="ValidatieObjectType">
 		<xs:sequence>
-			<xs:element name="naam"        type="xs:string"       minOccurs="1" maxOccurs="1"/>
+			<xs:element name="naam"        type="NLCSObjectType"  minOccurs="1" maxOccurs="1"/>
 			<xs:element name="soortObject" type="ObjectSoortType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -84,11 +100,18 @@
 	</xs:complexType>
 	<xs:complexType name="ScopeType">
 		<xs:sequence>
-			<xs:element name="tekeningSoort" type="TekeningSoortType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="statussen" type="StatusVerzamelingType" minOccurs="1" maxOccurs="1" />
-			<xs:element name="bedrijfsToestanden" type="BedrijfsToestandVerzamelingType" minOccurs="1" maxOccurs="1"/>			
+			<xs:element name="tekeningSoort"      type="TekeningSoortType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="statussen"          type="StatusVerzamelingType" minOccurs="1" maxOccurs="1" />
+			<xs:element name="bedrijfsToestanden" type="BedrijfsToestandVerzamelingType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="niveau"             type="NiveauRegelType" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Bijvoorbeeld bij deelrevisie een waarschuwing. Deze naar Scope verplaatsen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="scopeValidatieRegels" type="ScopeValidatieRegelsVerzamelingType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
+	
 	<xs:complexType name="ScopeVerzamelingType">
 		<xs:sequence>
 			<xs:element name="scope" type="ScopeType" minOccurs="1" maxOccurs="unbounded"/>
@@ -97,22 +120,52 @@
 	
 	<xs:complexType name="ValidatieRegelType">
 		<xs:sequence>
-			<xs:element name="nummer" type="xs:ID" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="naam" type="xs:string" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="beschrijving" type="xs:string" minOccurs="1" maxOccurs="1"/> <!-- Een korte beschrijving -->
-			<xs:element name="soort" type="SoortValidatieRegelType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="niveau" type="NiveauRegelType" minOccurs="1" maxOccurs="1"/> <!-- Bijv. deelrevisie waarschuwing. Deze naar Scope verplaatsen? -->
-			<xs:element name="definitie" type="xs:string" minOccurs="1" maxOccurs="1"/> <!-- operationaliseerbaar naar Schematron -->
-			<xs:element name="toelichting" type="xs:string" minOccurs="1" maxOccurs="1"/> <!-- Wat je niet kwijt kan in beschrijving of definitie -->
+			<xs:element name="nummer"           type="xs:ID" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="naam"             type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="beschrijving"     type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Een korte beschrijving van de inhoudelijke validatie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="soort"            type="SoortValidatieRegelType" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="definitie"        type="xs:string" minOccurs="1" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Definitie waarmee de daadwerkelijke Schematron inhoudelijke validatie ontwikkeld kan worden</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="toelichting"       type="xs:string" minOccurs="1" maxOccurs="1"> 
+				<xs:annotation>
+					<xs:documentation>Ruimte voor aanvullend toelichting wat niet past in beschrijving of definitie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="validatieObjecten" type="ValidatieObjectVerzamelingType" minOccurs="1" maxOccurs="1" />
-			<xs:element name="scopes" type="ScopeVerzamelingType" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
 	</xs:complexType>
 	
+	<xs:complexType name="ValidatieRegelVerzamelingType">
+		<xs:sequence>
+			<xs:element name="validatieRegel" type="ValidatieRegelType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ScopeValidatieRegelsReferentieType">
+		<xs:sequence>
+			<xs:element name="scopeValidatieRegelNummer" type="xs:IDREF" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="ScopeValidatieRegelsVerzamelingType">
+		<xs:sequence>
+			<xs:element name="scopeValidatieRegel" type="ScopeValidatieRegelsReferentieType" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<!--  Root element -->
 	<xs:element name="NLCSValidatieregels">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="validatieRegel" type="ValidatieRegelType" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="validatieRegels" type="ValidatieRegelVerzamelingType" minOccurs="1" maxOccurs="unbounded"/>
+				<xs:element name="scopes" type="ScopeVerzamelingType" minOccurs="1" maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
