@@ -39,6 +39,51 @@
 			<xs:enumeration value="MSmof"/>
 			<xs:enumeration value="Amantelbuis"/>
 			<xs:enumeration value="AmantelbuisInhoud"/>
+			<xs:enumeration value="Eaardmof"/>
+			<xs:enumeration value="Eaarddraad"/>
+			<xs:enumeration value="Eaardpen"/>
+			<xs:enumeration value="HSkabel"/>
+			<xs:enumeration value="HSmof"/>
+			<xs:enumeration value="HSstation"/>
+			<xs:enumeration value="Eoliedrukinstallatie"/>
+			<xs:enumeration value="Eoliedrukleiding"/>
+			<xs:enumeration value="Apmerking]"/>
+			<xs:enumeration value="Amaaiveldhoogte"/>
+			<xs:enumeration value="Abestand_bijlage"/>
+			<xs:enumeration value="Akunstwerk"/>
+			<xs:enumeration value="Aaanlegtechniek"/>
+			<xs:enumeration value="Abeschermingvlak"/>
+			<xs:enumeration value="Amarkeringsobject"/>
+			<xs:enumeration value="AinUittredepunt"/>
+			<xs:enumeration value="AbeschermingVlak"/>			
+			<xs:enumeration value="Gstation"/>
+			<xs:enumeration value="Gleiding"/>
+			<xs:enumeration value="Gafsluiter"/>
+			<xs:enumeration value="GTstuk"/>
+			<xs:enumeration value="Goverdrachtspunt"/>
+			<xs:enumeration value="Gaftakzadel"/>
+			<xs:enumeration value="Geindstuk"/>
+			<xs:enumeration value="GappendageOverig"/>
+			<xs:enumeration value="Gisolatiestuk"/>
+			<xs:enumeration value="Govergangstuk"/>
+			<xs:enumeration value="Gmeetpunt"/>
+			<xs:enumeration value="Gleidingafblaas"/>
+			<xs:enumeration value="Gsifon"/>
+			<xs:enumeration value="GvertikaleBocht"/>
+			<xs:enumeration value="Gontspanningselement"/>
+			<xs:enumeration value="Gblaasgatzadel"/>
+			<xs:enumeration value="KBgelijkrichter"/>
+			<xs:enumeration value="KBmeetpaal"/>
+			<xs:enumeration value="KBmeetdraad"/>
+			<xs:enumeration value="KBanode"/>
+			<xs:enumeration value="KBdrainage"/>
+			<xs:enumeration value="KBobject"/>
+			<xs:enumeration value="Tstation"/>
+			<xs:enumeration value="Tbuis"/>
+			<xs:enumeration value="Tkabel"/>
+			<xs:enumeration value="Tmof"/>
+			<xs:enumeration value="Toverdrachtspunt"/>
+			
 		</xs:restriction>
 	</xs:simpleType>	
 	<xs:simpleType name="ObjectSoortType">
@@ -56,12 +101,12 @@
 	<xs:complexType name="ValidatieObjectType">
 		<xs:sequence>
 			<xs:element name="naam"        type="NLCSObjectType"  minOccurs="1" maxOccurs="1"/>
-			<xs:element name="soortObject" type="ObjectSoortType" minOccurs="1" maxOccurs="1"/>
+			<!-- <xs:element name="soortObject" type="ObjectSoortType" minOccurs="1" maxOccurs="1"/>  -->
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ValidatieObjectVerzamelingType">
 		<xs:sequence>
-			<xs:element name="validatieObject" type="ValidatieObjectType" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="validatieObject" type="ValidatieObjectType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="TekeningSoortType">
@@ -74,11 +119,11 @@
 	</xs:simpleType>
 	<xs:simpleType name="StatusType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="BESTAAND"/>
-			<xs:enumeration value="NIEUW"/>
-			<xs:enumeration value="REVISIE"/>
-			<xs:enumeration value="TIJDELIJK"/>
-			<xs:enumeration value="VERWIJDERD"/>
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="N"/>
+			<xs:enumeration value="R"/>
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="V"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="StatusVerzamelingType">
@@ -110,6 +155,7 @@
 			</xs:element>
 			<xs:element name="scopeValidatieRegels" type="ScopeValidatieRegelsVerzamelingType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
+		<xs:attribute name="naam" type="xs:string" use="required"/>
 	</xs:complexType>
 	
 	<xs:complexType name="ScopeVerzamelingType">

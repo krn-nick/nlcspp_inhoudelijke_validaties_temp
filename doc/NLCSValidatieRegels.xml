@@ -2,122 +2,160 @@
 <NLCSValidatieregels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		     xsi:schemaLocation="NLCSValidatieRegelsNameSpace NLCSValidatieRegels.xsd"
 		     xmlns="NLCSValidatieRegelsNameSpace">
-<<<<<<< Upstream, based on branch 'main' of https://github.com/krn-nick/nlcspp_inhoudelijke_validaties_temp.git
-	<validatieRegel>
-		<nummer>R1R</nummer>
-		<naam>Regel 1</naam>
-		<beschrijving>beschrijving</beschrijving>
-		<soort>Bestand</soort>
-		<niveau>Fout</niveau>
-		<definitie>definitie</definitie>
-		<toelichting>toelichting</toelichting>
-		<validatieObjecten>
-			<validatieObject>
-				<naam>naam</naam>
-				<soortObject>LS</soortObject>
-			</validatieObject>
-		</validatieObjecten>
-		<scopes>
-			<scope>
-				<tekeningSoort>Bestaande Situatie</tekeningSoort>
-				<statussen>
-					<status>BESTAAND</status>
-				</statussen>
-				<bedrijfsToestanden>
-					<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
-				</bedrijfsToestanden>
-			</scope>
-		</scopes>
-	</validatieRegel>
-	<validatieRegel>
-		<nummer>R2</nummer>
-		<naam>naam</naam>
-		<beschrijving>beschrijving</beschrijving>
-		<soort>Bestand</soort>
-		<niveau>Fout</niveau>
-		<definitie>definitie</definitie>
-		<toelichting>toelichting</toelichting>
-		<validatieObjecten>
-			<validatieObject>
-				<naam>naam</naam>
-				<soortObject>LS</soortObject>
-			</validatieObject>
-		</validatieObjecten>
-		<scopes>
-			<scope>
-				<tekeningSoort>Bestaande Situatie</tekeningSoort>
-				<statussen>
-					<status>BESTAAND</status>
-				</statussen>
-				<bedrijfsToestanden>
-					<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
-				</bedrijfsToestanden>
-			</scope>
-		</scopes>
-	</validatieRegel>
-=======
 	<validatieRegels>
 		<validatieRegel>
-			<nummer>idvalue0</nummer>
-			<naam>naam</naam>
-			<beschrijving>beschrijving</beschrijving>
+			<nummer>R.0</nummer>
+			<naam>Dummy</naam>
+			<beschrijving>Dummy</beschrijving>
 			<soort>Bestand</soort>
-			<definitie>definitie</definitie>
-			<toelichting>toelichting</toelichting>
-			<validatieObjecten>
-				<validatieObject>
-					<naam>MSkabel</naam>
-					<soortObject>LS</soortObject>
-				</validatieObject>
-			</validatieObjecten>
+			<definitie></definitie>
+			<toelichting></toelichting>
+			<validatieObjecten/> <!-- Deze regel geldt voor alle NLCS Objecten -->		
 		</validatieRegel>
 		<validatieRegel>
-			<nummer>idvalue1</nummer>
-			<naam>naam</naam>
-			<beschrijving>beschrijving</beschrijving>
+			<nummer>R.1</nummer>
+			<naam>Bestand bevat NLCS Objecten</naam>
+			<beschrijving>Bevat het NLCS++ bestand één of meerdere NLCS++ objecten?</beschrijving>
 			<soort>Bestand</soort>
-			<definitie>definitie</definitie>
-			<toelichting>toelichting</toelichting>
-			<validatieObjecten>
-				<validatieObject>
-					<naam>MSkabel</naam>
-					<soortObject>MS</soortObject>
-				</validatieObject>
-			</validatieObjecten>
+			<definitie>Een NLCS++ bestand moet een AProjectReferentie hebben waarin tenminste 1 NLCS Object zit.</definitie>
+			<toelichting>Excel Nr 3: Revisiedata aanwezig -> Er mag geen 'leeg' project ingeleverd worden, geen xml met alleen maar een Aprojectreferentie zonder ook maar enige revisiedata of met alleen maar bestaand/plan.</toelichting>
+			<validatieObjecten/> <!-- Deze regel geldt voor alle NLCS Objecten -->		
 		</validatieRegel>
 		<validatieRegel>
-			<nummer>idvalue2</nummer>
-			<naam>naam</naam>
-			<beschrijving>beschrijving</beschrijving>
-			<soort>Bestand</soort>
-			<definitie>definitie</definitie>
-			<toelichting>toelichting</toelichting>
-			<validatieObjecten>
-				<validatieObject>
-					<naam>AprojectReferentie</naam>
-					<soortObject>MS</soortObject>
-				</validatieObject>
-			</validatieObjecten>
+			<nummer>R.2</nummer>
+		<naam>Combinatie NLCS Status en Tekeningsoort</naam>
+		<beschrijving>Afhankelijk van het Tekeningsoort mogen er NLCS Objecten voorkomen met bepaalde NLCS Statussen</beschrijving>
+		<soort>Bestand</soort>
+		<definitie>Bestaande Situatie: B; Definitief Ontwerp: B, N, R, V en T; Deelrevisie: B, N, R, V en T; Eindrevisie: B, N, R en V</definitie>
+		<toelichting>Excel Nr 4: Zou iets moeten worden als geen T (tijdelijk) in Eindrevisie, waarschuwing over tijdelijk in Deelrevisie. Misschien nog meer sitaties die niet voor mogen komen?</toelichting>
+		<validatieObjecten/> <!-- Deze regel geldt voor alle NLCS Objecten -->
 		</validatieRegel>
-	</validatieRegels>
+		<validatieRegel>
+			<nummer>R.3</nummer>
+			<naam>Geometrie binnen Projectvlak</naam>
+			<beschrijving>Iedere geometrie (punt, lijn en vlak) van ieder NLCS Object in het bestand moet interactie hebben met het Projectgebied van AProjectReferentie</beschrijving>
+			<soort>Geometrie</soort>
+			<definitie>Het kenmerk Geometry, een gml:Point, gml:Curve of gml:Surface object moet interactie hebben met de Geometry (gml:Surface) van de AprojectReferentie </definitie>
+			<toelichting>Excel Nr 5: Alle geometrieën in het bestand moeten binnen Nederland liggen. </toelichting>
+			<validatieObjecten/> <!-- Deze regel geldt voor alle NLCS Objecten -->				
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.4</nummer>
+			<naam>Lijn Geometrie</naam>
+			<beschrijving>Een gml:Curve en de omtrek van een gml:Surface moeten voldoen aan inmeeteisen: minimale en maximale afstand van (inmeet)punten en mag geen knikken bevatten</beschrijving>
+			<soort>Geometrie</soort>
+			<definitie> </definitie>
+			<toelichting>Excel Nr 6: Alle Lijngeometrieën in het bestand moeten langer zijn dan 10cm (afkeur doen we per object waarvan de geometrie korter is). </toelichting>
+			<validatieObjecten> 
+			     <!-- Deze regel geldt voor alle NLCS Objecten met een gml:Curve-->
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+				<validatieObject><naam>AmantelbuisInhoud</naam></validatieObject>
+				<validatieObject><naam>Gleiding</naam></validatieObject>
+				<validatieObject><naam>KBmeetdraad</naam></validatieObject>
+				<validatieObject><naam>Tkabel</naam></validatieObject>
+				<validatieObject><naam>Tbuis</naam></validatieObject>
+				<validatieObject><naam>Eoliedrukleiding</naam></validatieObject>
+				<validatieObject><naam>Eaarddraad</naam></validatieObject>
+				<validatieObject><naam>Akunstwerk</naam></validatieObject>
+				<validatieObject><naam>Aaanlegtechniek</naam></validatieObject>
+				<!-- Deze regel geldt voor alle NLCS Objecten met een gml:Surface-->
+				<validatieObject><naam>LSkast</naam></validatieObject>
+				<validatieObject><naam>MSstation</naam></validatieObject>
+				<validatieObject><naam>HSstation</naam></validatieObject>
+				<validatieObject><naam>Gstation</naam></validatieObject>
+				<validatieObject><naam>Tstation</naam></validatieObject>
+				<validatieObject><naam>AbeschermingVlak</naam></validatieObject>
+			</validatieObjecten>				
+		</validatieRegel>
+		</validatieRegels>
 	<scopes>
-		<scope>
+		<scope naam="Bestaande Situatie alle statussen">
 			<tekeningSoort>Bestaande Situatie</tekeningSoort>
 			<statussen>
-				<status>BESTAAND</status>
+				<status>B</status>
 			</statussen>
 			<bedrijfsToestanden>
 				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
 			</bedrijfsToestanden>
 			<niveau>Fout</niveau>
 			<scopeValidatieRegels>
 				<scopeValidatieRegel>
-					<scopeValidatieRegelNummer>
-						idvalue2
-					</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.1</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.2</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
+				</scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Definitef Ontwerp alle statussen">
+			<tekeningSoort>Definitief Ontwerp</tekeningSoort>
+			<statussen>
+				<status>N</status>
+				<status>R</status>
+				<status>V</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<niveau>Fout</niveau>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel>
+					<scopeValidatieRegelNummer>R.1</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.2</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
+				</scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Deelrevisie alle statussen">
+			<tekeningSoort>Deelrevisie</tekeningSoort>
+			<statussen>
+				<status>N</status>
+				<status>R</status>
+				<status>V</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<niveau>Fout</niveau>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel>
+					<scopeValidatieRegelNummer>R.1</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.2</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.4</scopeValidatieRegelNummer>
+				</scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Eindrevisie alle statussen">
+			<tekeningSoort>Eindrevisie</tekeningSoort>
+			<statussen>
+				<status>N</status>
+				<status>R</status>
+				<status>V</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>
+				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
+			</bedrijfsToestanden>
+			<niveau>Fout</niveau>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel>
+					<scopeValidatieRegelNummer>R.1</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.2</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.4</scopeValidatieRegelNummer>
 				</scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 	</scopes>
->>>>>>> ebdbdae Scopes zijn nu apart gedefinieerd en met een referentie gekoppeld aan de validatieRegel.
+
 </NLCSValidatieregels>
