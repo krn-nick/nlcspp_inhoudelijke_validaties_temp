@@ -15,7 +15,7 @@
 		<validatieRegel>
 			<nummer>R.1</nummer>
 			<naam>Bestand bevat NLCS Objecten</naam>
-			<beschrijving>Bevat het NLCS++ bestand één of meerdere NLCS++ objecten?</beschrijving>
+			<beschrijving>Het NLCS++ bestand moet één of meerdere NLCS++ objecten bevatten</beschrijving>
 			<soort>Bestand</soort>
 			<definitie>Een NLCS++ bestand moet een AProjectReferentie hebben waarin tenminste 1 NLCS Object zit.</definitie>
 			<toelichting>Excel Nr 3: Revisiedata aanwezig -> Er mag geen 'leeg' project ingeleverd worden, geen xml met alleen maar een Aprojectreferentie zonder ook maar enige revisiedata of met alleen maar bestaand/plan.</toelichting>
@@ -70,6 +70,37 @@
 				<validatieObject><naam>AbeschermingVlak</naam></validatieObject>
 			</validatieObjecten>				
 		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.5</nummer>
+			<naam>GisId en AssetId</naam>
+			<beschrijving>Ieder NLCS Object met de status B, R en V moet een GisId en AssetId hebben, dit zijn namelijk objecten die als oorsprong de assetregistratie hebben. NLCS objecten met de status N en T mogen juist geen GisId en AssetId hebben omdat deze objecten ontstaan in het ontwerp of de revisie.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>Als Status = B, R of V, dan moet er een waarde zijn voor zowel GisId als AssetId, Als Status = N of T dan moet GisId en AssetId leeg zijn</definitie>
+			<toelichting></toelichting>
+		    <validatieObjecten/> <!-- Deze regel geldt voor alle NLCS Objecten -->	
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.6</nummer>
+			<naam>Generieke verplichte kenmerken Primaire Assets Elec</naam>
+			<beschrijving>Ieder NLCS Object voor Elec moeten waardes hebben voorde attributen Subnettype, Inmeetwijze en Nauwkeurigheid.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie></definitie>
+			<toelichting></toelichting>
+			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten van Elec-->
+				<validatieObject><naam>MSstation</naam></validatieObject>
+				<validatieObject><naam>LSkast</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>HSstation</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>				
+			</validatieObjecten>	
+		</validatieRegel>
 		</validatieRegels>
 	<scopes>
 		<scope naam="Bestaande Situatie alle statussen">
@@ -88,6 +119,8 @@
 					<scopeValidatieRegelNummer>R.1</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.2</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.5</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.6</scopeValidatieRegelNummer>
 				</scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
@@ -109,6 +142,8 @@
 					<scopeValidatieRegelNummer>R.1</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.2</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.5</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.6</scopeValidatieRegelNummer>
 				</scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
@@ -131,6 +166,8 @@
 					<scopeValidatieRegelNummer>R.2</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.4</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.5</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.6</scopeValidatieRegelNummer>
 				</scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
@@ -153,6 +190,8 @@
 					<scopeValidatieRegelNummer>R.2</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.4</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.5</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.6</scopeValidatieRegelNummer>
 				</scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
