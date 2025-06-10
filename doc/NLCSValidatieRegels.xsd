@@ -27,6 +27,8 @@
 	</xs:simpleType>
 	<xs:simpleType name="NLCSObjectType">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="Document"/>
+			<xs:enumeration value="AlleObjecten"/>
 			<xs:enumeration value="AprojectReferentie"/>
 			<xs:enumeration value="LSkast"/>
 			<xs:enumeration value="LSmof"/>
@@ -148,7 +150,7 @@
 			<xs:element name="tekeningSoort"      type="TekeningSoortType" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="statussen"          type="StatusVerzamelingType" minOccurs="1" maxOccurs="1" />
 			<xs:element name="bedrijfsToestanden" type="BedrijfsToestandVerzamelingType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="niveau"             type="NiveauRegelType" minOccurs="1" maxOccurs="1">
+			<xs:element name="niveau"             type="NiveauRegelType" minOccurs="0" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Bijvoorbeeld bij deelrevisie een waarschuwing. Deze naar Scope verplaatsen</xs:documentation>
 				</xs:annotation>
@@ -166,8 +168,6 @@
 	
 	<xs:complexType name="ValidatieRegelType">
 		<xs:sequence>
-			<xs:element name="nummer"           type="xs:ID" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="naam"             type="xs:string" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="beschrijving"     type="xs:string" minOccurs="1" maxOccurs="1">
 				<xs:annotation>
 					<xs:documentation>Een korte beschrijving van de inhoudelijke validatie</xs:documentation>
@@ -186,6 +186,8 @@
 			</xs:element>
 			<xs:element name="validatieObjecten" type="ValidatieObjectVerzamelingType" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
+		<xs:attribute name="nummer" type="xs:ID"/>
+		<xs:attribute name="naam" type="xs:string" />
 	</xs:complexType>
 	
 	<xs:complexType name="ValidatieRegelVerzamelingType">
@@ -196,7 +198,8 @@
 	
 	<xs:complexType name="ScopeValidatieRegelsReferentieType">
 		<xs:sequence>
-			<xs:element name="scopeValidatieRegelNummer" type="xs:IDREF" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="nummer" type="xs:IDREF" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="niveau" type="NiveauRegelType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	
