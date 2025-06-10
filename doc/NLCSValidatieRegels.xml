@@ -119,7 +119,8 @@
 			<soort>Verplichte waarde</soort>
 			<definitie>
 				Iedere kabel moet een waarde voor de volgende kenmerken hebben: 
-					- Type
+					- Uitvoering
+					- Kabelopbouw
 					- Fabrikant
 					- Verbindingsnummer
 					- Spanningsniveau
@@ -128,8 +129,9 @@
 				Voor LS kabels zijn er nog 2 extra kenmerken die gevuld moeten zijn: 
 					- Bovengronds
 					- Functie.
+				N.B. Als het kenmerk Uitvoering de waarde "KEUZE ONTBREEKT IN LIJST" dan moet het kenmerk OmschrijvingUitvoering gevuld zijn! 
 			</definitie>
-			<toelichting></toelichting>
+			<toelichting>Powerpoint Slide 18</toelichting>
 			<validatieObjecten> <!--  -->
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
@@ -297,7 +299,7 @@
 					- MSKabel via MSmof met andere MSkabel
 					- HSKabel via HSmof met andere HSkabel
 			</definitie>
-			<toelichting></toelichting>
+			<toelichting>Excel R.105, R.112, R.115 en R.119: Check of verbonden assets van hetzelfde type (LS of MS) zijn </toelichting>
 			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 				<validatieObject><naam>LSkabel</naam></validatieObject>
@@ -314,13 +316,63 @@
 					- Verbindingnummer
 					- Spanningsniveau
 			</definitie>
-			<toelichting></toelichting>
+			<toelichting>Powerpoint Slide 25</toelichting>
 			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 			</validatieObjecten>		
-		</validatieRegel>		
+		</validatieRegel>
+		<validatieRegel nummer="R.24" naam="Fase MS Kabel">
+			<beschrijving>De Fase van de kabel moet overeenkomen met de Uitvoering van de kabel.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Vergelijk de Faseaanduiding met het eerste twee karakters van de uitvoering:
+				- 3 Fasen: 3x
+				- L1: 1x
+				- L2: 1x
+				- L3: 1x
+				- N: maakt niet uit.	
+			</definitie>
+			<toelichting>Excel R.95: Status nieuw -> waarde Faseaanduiding matcht met aantal hoofdaders v/d kabeluitvoering (Uitvoering|Kabelopbouw). </toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.25" naam="Verbonden kabels juiste Fase">
+			<beschrijving>De kabels die door een mof verbonden zijn moeten de juiste Fase hebben.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Als een mof meer dan 1 kabel verbind dan moet de fase van de verbonden kabels juist zijn:
+				1 kabel: geen controle
+				2 kabels: de Fase van beide kabels moet hetzelfde zijn (L1, L2, L3 of 3 Fase)
+				3 kabels: de Fase van de 3 kabels moet hetzelfde zijn (L1, L2, L3 of 3 Fase)
+				4 kabels: 1 kabel moet 3 Fase zijn de andere kabels moet L1, L2 en L3 zijn. Het is immers een overgang van 3 Fase naar 3x 1 Fase.
+				> 4 kabels: geen controle.
+			</definitie>
+			<toelichting>toelichting</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel nummer="R.26" naam="Aantal kabels en mof functie">
+			<beschrijving>Het aantal kabels moet passen bij de Functie van de Mof.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Afhankelijk van de Functie van de Mof moet er een aantal kabels verbonden zijn met de mof:
+				- EINDMOF, EINDDOP, LOODKOP, EIND GEAARD: 1 kabel
+				- VERBINDNG, ZEGELWIJZIGING, MANTELREPARATIE: 2 kabels met dezelfde Fase of 4 kabels indien 3 fase met L1, L2 en L3 
+				- AFTAK: 3 kabels
+			</definitie>
+			<toelichting>toelichting</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
 	</validatieRegels>
 	<scopes>
 		<scope naam="Bestaande Situatie alle bedrijfstoestanden">
@@ -349,7 +401,8 @@
 				<scopeValidatieRegel><nummer>R.14</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
-				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Informerend</niveau></scopeValidatieRegel>				
+				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Informerend</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Informerend</niveau></scopeValidatieRegel>					
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Definitef Ontwerp alle statussen">
@@ -393,6 +446,7 @@
 				<scopeValidatieRegel><nummer>R.5</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.6</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.7</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie alle bedrijfstoestanden">
@@ -431,6 +485,7 @@
 				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Nieuwe en aangepaste objecten Eindrevisie">
@@ -454,6 +509,7 @@
 				<scopeValidatieRegel><nummer>R.15</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.20</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.21</nummer><niveau>Fout</niveau></scopeValidatieRegel>
+				<scopeValidatieRegel><nummer>R.24</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 	</scopes>
