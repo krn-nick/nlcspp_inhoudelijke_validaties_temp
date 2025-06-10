@@ -35,3 +35,5 @@ R.14	Verplichte kenmerken Stations en Kasten
 R.15	Verplichte kenmerken Mantelbuis
 R.20	Topologie punt objecten Elec
 R.21	Geldig eindpunt Kabel
+R.22	Kabels zelfde Netvlak
+R.23	Verbonden kabels juiste kenmerken
