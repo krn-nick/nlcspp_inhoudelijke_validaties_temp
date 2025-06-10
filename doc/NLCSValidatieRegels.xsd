@@ -150,11 +150,6 @@
 			<xs:element name="tekeningSoort"      type="TekeningSoortType" minOccurs="1" maxOccurs="1"/>
 			<xs:element name="statussen"          type="StatusVerzamelingType" minOccurs="1" maxOccurs="1" />
 			<xs:element name="bedrijfsToestanden" type="BedrijfsToestandVerzamelingType" minOccurs="1" maxOccurs="1"/>
-			<xs:element name="niveau"             type="NiveauRegelType" minOccurs="0" maxOccurs="1">
-				<xs:annotation>
-					<xs:documentation>Bijvoorbeeld bij deelrevisie een waarschuwing. Deze naar Scope verplaatsen</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="scopeValidatieRegels" type="ScopeValidatieRegelsVerzamelingType" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 		<xs:attribute name="naam" type="xs:string" use="required"/>

@@ -364,7 +364,6 @@
 				<bedrijfstoestand>RESERVE</bedrijfstoestand>
 				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
 			</bedrijfsToestanden>
-			<niveau>Fout</niveau>
 			<scopeValidatieRegels>
 				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -386,7 +385,6 @@
 				<bedrijfstoestand>RESERVE</bedrijfstoestand>
 				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
 			</bedrijfsToestanden>
-			<niveau>Fout</niveau>
 			<scopeValidatieRegels>
 				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -409,7 +407,6 @@
 				<bedrijfstoestand>RESERVE</bedrijfstoestand>
 				<bedrijfstoestand>VERLATEN</bedrijfstoestand>
 			</bedrijfsToestanden>
-			<niveau>Fout</niveau>
 			<scopeValidatieRegels>
 				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.2</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -430,7 +427,6 @@
 				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
 				<bedrijfstoestand>RESERVE</bedrijfstoestand>				
 			</bedrijfsToestanden>
-			<niveau>Fout</niveau>
 			<scopeValidatieRegels>
 				<scopeValidatieRegel><nummer>R.1</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Fout</niveau></scopeValidatieRegel>
@@ -447,7 +443,6 @@
 				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
 				<bedrijfstoestand>RESERVE</bedrijfstoestand>				
 			</bedrijfsToestanden>
-			<niveau>Fout</niveau>
 			<scopeValidatieRegels>
 				<scopeValidatieRegel><nummer>R.8</nummer><niveau>Fout</niveau></scopeValidatieRegel>
 				<scopeValidatieRegel><nummer>R.9</nummer><niveau>Fout</niveau></scopeValidatieRegel>
