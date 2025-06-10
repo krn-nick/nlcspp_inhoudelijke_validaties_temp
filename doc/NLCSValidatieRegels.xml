@@ -81,12 +81,12 @@
 		</validatieRegel>
 		<validatieRegel>
 			<nummer>R.6</nummer>
-			<naam>Verplichte kenmerken Assets Elec</naam>
-			<beschrijving>Ieder NLCS Object voor Elec moeten waardes hebben voorde attributen Subnettype, Inmeetwijze en Nauwkeurigheid.</beschrijving>
+			<naam>Inmeetwijze en Nauwkeurigheid Assets Elec</naam>
+			<beschrijving>Ieder NLCS Object voor Elec moeten waardes hebben voor de attributen Inmeetwijze en Nauwkeurigheid.</beschrijving>
 			<soort>Verplichte waarde</soort>
-			<definitie>Ieder NLCS Object voor Elec moeten waardes hebben voorde attributen Subnettype, Inmeetwijze en Nauwkeurigheid.</definitie>
+			<definitie>Ieder NLCS Object voor Elec moeten waardes hebben voorde attributen Inmeetwijze en Nauwkeurigheid.</definitie>
 			<toelichting>Powerpoint slide 18</toelichting>
-			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten van Elec-->
+			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten -->
 				<validatieObject><naam>MSstation</naam></validatieObject>
 				<validatieObject><naam>LSkast</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
@@ -99,20 +99,213 @@
 				<validatieObject><naam>HSstation</naam></validatieObject>
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 				<validatieObject><naam>HSmof</naam></validatieObject>				
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
 			</validatieObjecten>	
 		</validatieRegel>
 		<validatieRegel>
 			<nummer>R.7</nummer>
+			<naam>Subnettype gevuld voor LS en MS Kabel</naam>
+			<beschrijving>MS Kabel, LS Kabel en LS Mof moeten een waarde hebben voor Subnettype.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie></definitie>
+			<toelichting>Powerpoint slide 18</toelichting>
+			<validatieObjecten> <!--  -->
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+			</validatieObjecten>		
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.8</nummer>
 			<naam>Verplichte kenmerken Kabels</naam>
 			<beschrijving>Iedere kabel heeft kenmerken die gevuld moeten zijn.</beschrijving>
 			<soort>Verplichte waarde</soort>
-			<definitie>Iedere kabel moet een waarde voor de volgende kenmerken hebben: Type, Fabrikant, DatumAanleg, Verbindingsnummer, Spanningsniveau, Aardingssysteem en Fase aanduiding. Voor LS kabels zijn er nog 2 extra kenmerken die gevuld moeten zijn: Bovengronds en Functie.</definitie>
+			<definitie>
+				Iedere kabel moet een waarde voor de volgende kenmerken hebben: 
+					- Type
+					- Fabrikant
+					- Verbindingsnummer
+					- Spanningsniveau
+					- Aardingssysteem
+					- FaseAanduiding 
+				Voor LS kabels zijn er nog 2 extra kenmerken die gevuld moeten zijn: 
+					- Bovengronds
+					- Functie.
+			</definitie>
 			<toelichting></toelichting>
-			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten -->
+			<validatieObjecten> <!--  -->
 				<validatieObject><naam>LSkabel</naam></validatieObject>
 				<validatieObject><naam>MSkabel</naam></validatieObject>
 				<validatieObject><naam>HSkabel</naam></validatieObject>
 			</validatieObjecten>		
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.9</nummer>
+			<naam>Aanlegdatum gevuld</naam>
+			<beschrijving>De aanlegdatum moet gevuld zijn en moet geldig zijn, mag niet in de toekomst liggen.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>De aanlegdatum moet gevuld zijn en de gevulde datum mag niet in de toekomst liggen.</definitie>
+			<toelichting>Excel Nr. 24: object, nieuwgelegd > Datum aanleg/aftakdatum gevuld, niet in de toekomst (voor objecten met een veld datum aanleg/ aftakdatum in NRG)</toelichting>
+			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten van Elec -->
+				<validatieObject><naam>MSstation</naam></validatieObject>
+				<validatieObject><naam>LSkast</naam></validatieObject>
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>HSstation</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+			</validatieObjecten>		
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.10</nummer>
+			<naam>Verplichte kenmerken moffen</naam>
+			<beschrijving>Iedere mof heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Iedere mof moet een waarde voor de volgende kenmerken hebben:
+					- Functie
+					- Verbindingsnummer
+				Iedere LS mof moet een waarde voor de volgende kenmerken hebben:
+					- Bovengronds
+				Iedere MS en HS mof moet een waarde voor de volgende kenmerken hebben:
+					- NaamMonteur
+					- CrossBoundingAanwezig
+			</definitie>
+			<toelichting>Powerpoint Slide 21</toelichting>
+			<validatieObjecten> <!--  -->
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+			</validatieObjecten>		
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.11</nummer>
+			<naam>Verplichte kenmerken LSoverdrachtspunt</naam>
+			<beschrijving>Ieder overdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder LS Overdrachtspunt moet een waarde voor de volgende kenmerken hebben:
+				- EigenRichting
+				- Functie
+				- FaseAanduiding
+				- Aardingsysteem
+			</definitie>
+			<toelichting>Powerpoint Slide 22</toelichting>
+			<validatieObjecten> <!--  -->
+				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
+				</validatieObjecten>	
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.12</nummer>
+			<naam>Verplichte kenmerken OVLoverdrachtspunt</naam>
+			<beschrijving>Ieder overdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder OVL Overdrachtspunt moet een waarde voor de volgende kenmerken hebben:
+				- Aansluitset
+				- Mastnummer <!-- Zijn masten al direct genummerd als de aannemer ze aansluit? -->
+				- Functie
+				- Spanningsniveau
+				- Aansluitwijze
+				- Schakeling
+			</definitie>
+			<toelichting>Powerpoint Slide 23</toelichting>
+			<validatieObjecten> <!--  -->
+				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
+			</validatieObjecten>	
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.13</nummer>
+			<naam>Verplichte kenmerken MSoverdrachtspunt</naam>
+			<beschrijving>Ieder overdrachtspunt heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder MS Overdrachtspunt moet een waarde voor de volgende kenmerken hebben:
+				- Identificatie (EAN Code) <!-- is dit bekend bij de Aannemer? -->
+			</definitie>
+			<toelichting></toelichting>
+			<validatieObjecten> <!--  -->
+				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
+			</validatieObjecten>		
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.14</nummer>
+			<naam>Verplichte kenmerken Stations en Kasten</naam>
+			<beschrijving>Ieder station en kast heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Ieder Station en Kast moet een waarde voor de volgende kenmerken hebben:
+				- Nummer
+				- Functie
+			</definitie>
+			<toelichting></toelichting>
+			<validatieObjecten> <!--  -->
+				<validatieObject><naam>LSkast</naam></validatieObject>
+				<validatieObject><naam>MSstation</naam></validatieObject>
+				<validatieObject><naam>HSstation</naam></validatieObject>
+			</validatieObjecten>		
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.15</nummer>
+			<naam>Verplichte kenmerken Mantelbuis</naam>
+			<beschrijving>Iedere Mantelbuis heeft kenmerken die gevuld moeten zijn.</beschrijving>
+			<soort>Verplichte waarde</soort>
+			<definitie>
+				Iedere Mantelbuis moet een waarde voor de volgende kenmerken hebben:
+				- Materiaal
+				- Diameter
+				- Thema
+			</definitie>
+			<toelichting></toelichting>
+			<validatieObjecten> <!--  -->
+				<validatieObject><naam>LSkast</naam></validatieObject>
+				<validatieObject><naam>MSstation</naam></validatieObject>
+				<validatieObject><naam>HSstation</naam></validatieObject>
+			</validatieObjecten>		
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.20</nummer>
+			<naam>Topologie punt objecten Elec</naam>
+			<beschrijving>De punt objecten van Elec moeten aan de juiste kabel zijn verbonden en mogen niet zweven.</beschrijving>
+			<soort>Topologie</soort>
+			<definitie>
+				Een Punt object (geometrie van type gml:Point) mag niet zweven, maar moet verbonden zijn met de juiste kabel:
+				- MSmof en MSoverdrachtspunt moeten verbonden zijn met MSkabel
+				- LSmof, LSoverdrachtspunt en OVLoverdrachtspunt moeten verbonden zijn met LSkabel
+				- HSmof moet verbonden zijn met HSkabel
+			</definitie>
+			<toelichting>Powerpoint Slide 16</toelichting>
+			<validatieObjecten> <!-- Deze regel geldt voor alle NLCS Objecten met een punt geometrie van Elec -->
+				<validatieObject><naam>MSmof</naam></validatieObject>
+				<validatieObject><naam>MSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>LSmof</naam></validatieObject>
+				<validatieObject><naam>LSoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>OVLoverdrachtspunt</naam></validatieObject>
+				<validatieObject><naam>HSmof</naam></validatieObject>
+			</validatieObjecten>		
+		</validatieRegel>
+		<validatieRegel>
+			<nummer>R.21</nummer>
+			<naam>Geldig eindpunt Kabel</naam>
+			<beschrijving>Iedere kabel moet geldige eindpunten hebben aan beide kanten.</beschrijving>
+			<soort>Topologie</soort>
+			<definitie>
+				Een kabel moet aan beide kanten (begin- en eindpunt) een geldig eindpunt hebben, per kabel zijn de volgende objecten geldig:
+				- LSkabel: LSmof, LSoverdrachtspunt, OVLoverdrachtspunt, MSstation, LSkast
+				- MSkabel: MSmof, MSoverdrachtspunt en MSstation
+				- HSkabel: HSmof, HSstation en MSstation
+			</definitie>
+			<toelichting>Powerpoint Slide 24</toelichting>
+			<validatieObjecten> <!-- Deze regel geldt voor alle Kabel Objecten -->
+				<validatieObject><naam>MSkabel</naam></validatieObject>
+				<validatieObject><naam>LSkabel</naam></validatieObject>
+				<validatieObject><naam>HSkabel</naam></validatieObject>
+				</validatieObjecten>			
 		</validatieRegel>
 		</validatieRegels>
 	<scopes>
@@ -134,6 +327,8 @@
 					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.5</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.6</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.7</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.20</scopeValidatieRegelNummer>					
 				</scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
@@ -156,7 +351,8 @@
 					<scopeValidatieRegelNummer>R.2</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.3</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.5</scopeValidatieRegelNummer>
-					<scopeValidatieRegelNummer>R.6</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.7</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.20</scopeValidatieRegelNummer>
 				</scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
@@ -181,7 +377,8 @@
 					<scopeValidatieRegelNummer>R.4</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.5</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.6</scopeValidatieRegelNummer>
-				</scopeValidatieRegel>
+					<scopeValidatieRegelNummer>R.7</scopeValidatieRegelNummer>
+			</scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 		<scope naam="Eindrevisie alle statussen">
@@ -205,7 +402,53 @@
 					<scopeValidatieRegelNummer>R.4</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.5</scopeValidatieRegelNummer>
 					<scopeValidatieRegelNummer>R.6</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.7</scopeValidatieRegelNummer>
 				</scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Nieuwe en aangepaste objecten Deelrevisie">
+			<tekeningSoort>Deelrevisie</tekeningSoort>
+			<statussen>
+				<status>N</status>				
+				<status>R</status>
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>				
+			</bedrijfsToestanden>
+			<niveau>Fout</niveau>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel>
+					<scopeValidatieRegelNummer>R.8</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.9</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.20</scopeValidatieRegelNummer>
+			</scopeValidatieRegel>
+			</scopeValidatieRegels>
+		</scope>
+		<scope naam="Nieuwe en aangepaste objecten Eindrevisie">
+			<tekeningSoort>Eindrevisie</tekeningSoort>
+			<statussen>
+				<status>N</status>
+				<status>R</status>				
+			</statussen>
+			<bedrijfsToestanden>
+				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
+				<bedrijfstoestand>RESERVE</bedrijfstoestand>				
+			</bedrijfsToestanden>
+			<niveau>Fout</niveau>
+			<scopeValidatieRegels>
+				<scopeValidatieRegel>
+					<scopeValidatieRegelNummer>R.8</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.9</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.10</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.11</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.12</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.13</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.14</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.15</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.20</scopeValidatieRegelNummer>
+					<scopeValidatieRegelNummer>R.21</scopeValidatieRegelNummer>
+			</scopeValidatieRegel>
 			</scopeValidatieRegels>
 		</scope>
 	</scopes>
