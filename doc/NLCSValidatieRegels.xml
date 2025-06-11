@@ -385,7 +385,7 @@
 				<validatieObject><naam>Amantelbuis</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
-		<validatieRegel numnmer="R.28" naam="Mantelbuis Inhoud aanwezig">
+		<validatieRegel nummer="R.28" naam="Mantelbuis Inhoud aanwezig">
 			<beschrijving>Een Mantelbuis die niet Reserve is moet een Mantelbuis inhoud hebben.</beschrijving>
 			<soort>Consistentie</soort>
 			<definitie>
