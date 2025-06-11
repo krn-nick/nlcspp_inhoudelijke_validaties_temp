@@ -181,8 +181,8 @@
 			</xs:element>
 			<xs:element name="validatieObjecten" type="ValidatieObjectVerzamelingType" minOccurs="1" maxOccurs="1" />
 		</xs:sequence>
-		<xs:attribute name="nummer" type="xs:ID"/>
-		<xs:attribute name="naam" type="xs:string" />
+		<xs:attribute name="nummer" type="xs:ID" use="required"/>
+		<xs:attribute name="naam" type="xs:string" use="required"/>
 	</xs:complexType>
 	
 	<xs:complexType name="ValidatieRegelVerzamelingType">

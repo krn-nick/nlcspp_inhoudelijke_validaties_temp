@@ -373,6 +373,31 @@
 				<validatieObject><naam>HSmof</naam></validatieObject>
 			</validatieObjecten>
 		</validatieRegel>
+		<validatieRegel nummer="R.27" naam="Mantelbuis past in mantelbuis">
+			<beschrijving>Een mantelbuis die in een andere mantelbuis ligt moet een kleinere diamter hebben dan de mantelbuis waarin het ligt.</beschrijving>
+			<soort>Inhoud waarde</soort>
+			<definitie>
+				Een mantelbuis die volgens de mantelbuis_inhoud in een andere mantelbuis ligt moet een kleinere diameter hebben dan de mantelbuis waarin het ligt. Het kenmerk Diameter moet vergeleken worden. Let op de Diameter is een Text kenmerk.
+			</definitie>
+			<toelichting>Excel R.37: Elec + gas, status niew -> als Amantelbuisinhoud een andere mantelbuis is, moet de diameter van de binnenste mantelbuis kleiner zijn dan die van de buitenste. 
+			</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
+		<validatieRegel numnmer="R.28" naam="Mantelbuis Inhoud aanwezig">
+			<beschrijving>Een Mantelbuis die niet Reserve is moet een Mantelbuis inhoud hebben.</beschrijving>
+			<soort>Consistentie</soort>
+			<definitie>
+				Indien de Bedrijfstoestand van een AMantelbuis de waarde "RESERVE" heeft mag het geen AmantelbuisInhoud hebben, 
+				als de status "IN BEDRIJF" is dan moet het een AmantelbuisInhoud hebben. 
+				Je kunt een AmmantelbuisInhoud vinden door te zoeken op de MantelbuisHandle.
+			</definitie>
+			<toelichting>Excel R.30 en R.34: Elec + gas, status nieuw, bedrijfstoestand reserve -> Mag geen Amantelbuisinhoud hebben (niet gekoppeld zijn aan assets).  en Elec + gas, status nieuw, bedrijfstoestand anders dan Reserve -> Moet gekoppeld zijn aan een asset (Amantelbuisinhoud).</toelichting>
+			<validatieObjecten>
+				<validatieObject><naam>Amantelbuis</naam></validatieObject>
+			</validatieObjecten>
+		</validatieRegel>
 	</validatieRegels>
 	<scopes>
 		<scope naam="Bestaande Situatie alle bedrijfstoestanden">

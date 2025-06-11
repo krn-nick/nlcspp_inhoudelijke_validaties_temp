@@ -39,3 +39,6 @@ R.22	Kabels zelfde Netvlak
 R.23	Verbonden kabels juiste kenmerken
 R.24	Fase MS Kabel
 R.25	Verbonden kabels juiste Fase
+R.26	Aantal kabels en mof functie
+R.27	Mantelbuis past in mantelbuis
+R.28	Mantelbuis Inhoud aanwezig
