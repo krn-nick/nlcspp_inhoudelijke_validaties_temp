@@ -18,10 +18,10 @@
 			<beschrijving>Afhankelijk van het Tekeningsoort mogen er NLCS Objecten voorkomen met bepaalde NLCS Statussen</beschrijving>
 			<soort>Bestand</soort>
 			<definitie>
-				Bestaande Situatie: B
-				Definitief Ontwerp: B, N, R, V en T 
-				Deelrevisie: B, N, R, V en T 
-				Eindrevisie: B, N, R en V
+				Bestaande Situatie: BESTAAND
+				Definitief Ontwerp: BESTAAND, NIEUW, REVISIE, VERWIJDERD en TIJDELIJK 
+				Deelrevisie: BESTAAND, NIEUW, REVISIE, VERWIJDERD en TIJDELIJK  
+				Eindrevisie: BESTAAND, NIEUW, REVISIE en VERWIJDERD 
 			</definitie>
 			<toelichting>Excel Nr 4: Zou iets moeten worden als geen T (tijdelijk) in Eindrevisie, waarschuwing over tijdelijk in Deelrevisie. Misschien nog meer sitaties die niet voor mogen komen?</toelichting>
 			<validatieObjecten/> <!-- Deze regel geldt voor alle NLCS Objecten -->
@@ -364,7 +364,8 @@
 				Afhankelijk van de Functie van de Mof moet er een aantal kabels verbonden zijn met de mof:
 				- EINDMOF, EINDDOP, LOODKOP, EIND GEAARD: 1 kabel
 				- VERBINDNG, ZEGELWIJZIGING, MANTELREPARATIE: 2 kabels met dezelfde Fase of 4 kabels indien 3 fase met L1, L2 en L3 
-				- AFTAK: 3 kabels
+				- AFTAK (op bestaande kabel]): 2 kabels: 1 nieuwe en moet op een bestaande liggen evt met marge.
+				- AFTAK (op nieuwe kabel): 3 kabels.
 			</definitie>
 			<toelichting>toelichting</toelichting>
 			<validatieObjecten>
@@ -403,7 +404,7 @@
 		<scope naam="Bestaande Situatie alle bedrijfstoestanden">
 			<tekeningSoort>Bestaande Situatie</tekeningSoort>
 			<statussen>
-				<status>B</status>
+				<status>BESTAAND</status>
 			</statussen>
 			<bedrijfsToestanden>
 				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
@@ -433,9 +434,9 @@
 		<scope naam="Definitef Ontwerp alle statussen">
 			<tekeningSoort>Definitief Ontwerp</tekeningSoort>
 			<statussen>
-				<status>N</status>
-				<status>R</status>
-				<status>V</status>
+				<status>NIEUW</status>
+				<status>REVISIE</status>
+				<status>VERWIJDERD</status>
 			</statussen>
 			<bedrijfsToestanden>
 				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
@@ -454,9 +455,9 @@
 		<scope naam="Deelrevisie alle bedrijfstoestanden">
 			<tekeningSoort>Deelrevisie</tekeningSoort>
 			<statussen>
-				<status>N</status>
-				<status>R</status>
-				<status>V</status>
+				<status>NIEUW</status>
+				<status>REVISIE</status>
+				<status>VERWIJDERD</status>
 			</statussen>
 			<bedrijfsToestanden>
 				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
@@ -477,9 +478,9 @@
 		<scope naam="Eindrevisie alle bedrijfstoestanden">
 			<tekeningSoort>Eindrevisie</tekeningSoort>
 			<statussen>
-				<status>N</status>
-				<status>R</status>
-				<status>V</status>
+				<status>NIEUW</status>
+				<status>REVISIE</status>
+				<status>VERWIJDERD</status>
 			</statussen>
 			<bedrijfsToestanden>
 				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
@@ -499,8 +500,8 @@
 		<scope naam="Nieuwe en aangepaste objecten Deelrevisie">
 			<tekeningSoort>Deelrevisie</tekeningSoort>
 			<statussen>
-				<status>N</status>				
-				<status>R</status>
+				<status>NIEUW</status>				
+				<status>REVISIE</status>
 			</statussen>
 			<bedrijfsToestanden>
 				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>
@@ -516,8 +517,8 @@
 		<scope naam="Nieuwe en aangepaste objecten Eindrevisie">
 			<tekeningSoort>Eindrevisie</tekeningSoort>
 			<statussen>
-				<status>N</status>
-				<status>R</status>				
+				<status>NIEUW</status>
+				<status>REVISIE</status>				
 			</statussen>
 			<bedrijfsToestanden>
 				<bedrijfstoestand>IN BEDRIJF</bedrijfstoestand>

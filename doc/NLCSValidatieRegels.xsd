@@ -121,11 +121,11 @@
 	</xs:simpleType>
 	<xs:simpleType name="StatusType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="B"/>
-			<xs:enumeration value="N"/>
-			<xs:enumeration value="R"/>
-			<xs:enumeration value="T"/>
-			<xs:enumeration value="V"/>
+			<xs:enumeration value="BESTAAND"/>
+			<xs:enumeration value="NIEUW"/>
+			<xs:enumeration value="REVISIE"/>
+			<xs:enumeration value="TIJDELIJK"/>
+			<xs:enumeration value="VERWIJDERD"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="StatusVerzamelingType">
