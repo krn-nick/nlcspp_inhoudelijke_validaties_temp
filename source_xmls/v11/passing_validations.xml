@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLCSnetbeheerType xmlns:keuzelijst="NLCSnetbeheer"
+                   xmlns:gml="http://www.opengis.net/gml/3.2"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="NLCSnetbeheer">
+    <VersieNummer>11</VersieNummer>
+    <AprojectReferentie>
+        <Handle>Keronic</Handle>
+        <Projectnummer>1</Projectnummer>
+        <DeelrevisieVolgnummer>1</DeelrevisieVolgnummer>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="2"
+                srsName="EPSG:28992">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>100.0 100.0 200.0 100.0 200.0 200.0 100.0 200.0 100.0 100.0</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </AprojectReferentie>
+    <MSkabel>
+        <Handle>6301</Handle>
+        <Uitvoering>3x240Alrm as35</Uitvoering>
+        <Kabelopbouw>YMeKrvaslqwd</Kabelopbouw>
+        <Fabrikant>NKF</Fabrikant>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>RESERVE</Bedrijfstoestand>
+        <Spanningsniveau>10 kV</Spanningsniveau>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <Subnettype>DISTRIBUTIE</Subnettype>
+        <FaseAanduiding>3 Fasen</FaseAanduiding>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>83412</GisId>
+        <AssetId>{38518CAF-0F42-448D-8CD6-1E655152A0AD}</AssetId>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList> 21000.0 21000.0 -0.80 21000.0 22000.0 -0.80 22000.0 22000.0 -0.80</gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+</NLCSnetbeheerType>
