@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NLCSnetbeheerType xmlns:keuzelijst="NLCSnetbeheer"
+                   xmlns:gml="http://www.opengis.net/gml/3.2"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="NLCSnetbeheer">
+    <VersieNummer>11</VersieNummer>
+    <AprojectReferentie>
+        <Handle>Keronic</Handle>
+        <Projectnummer>1</Projectnummer>
+        <DeelrevisieVolgnummer>1</DeelrevisieVolgnummer>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="2"
+                srsName="EPSG:28992">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>100.0 100.0 200.0 100.0 200.0 200.0 100.0 200.0 100.0 100.0</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </AprojectReferentie>
+    <MSkabel>
+        <Handle>6301</Handle>
+        <Uitvoering>3x240Alrm as35</Uitvoering>
+        <Kabelopbouw>YMeKrvaslqwd</Kabelopbouw>
+        <Fabrikant>NKF</Fabrikant>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>RESERVE</Bedrijfstoestand>
+        <Spanningsniveau>10 kV</Spanningsniveau>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <Subnettype>DISTRIBUTIE</Subnettype>
+        <FaseAanduiding>3 Fasen</FaseAanduiding>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>83412</GisId>
+        <AssetId>{38518CAF-0F42-448D-8CD6-1E655152A0AD}</AssetId>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList> 21000.0 21000.0 -0.80 21000.0 22000.0 -0.80 22000.0 22000.0 -0.80</gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    
+    <MSstation>
+        <Handle>5638</Handle>
+        <Naam>MS-12345 Teststation</Naam>
+        <Nummer>12345</Nummer>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Functie>NETSTATION</Functie>
+        <Straatnaam>Straatnaam</Straatnaam>
+        <Huisnummer>100</Huisnummer>
+        <HuisnummerToevoeging>tv</HuisnummerToevoeging>
+        <Postcode>1234 AB</Postcode>
+        <Plaatsnaam>Plaatsnaam</Plaatsnaam>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <AssetId>{6D43A69E-C176-401A-8517-E2605079A344}</AssetId>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="2"
+                srsName="EPSG:28992">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>162051.3975000009 498521.1004999988 162042.91010000184 498514.01579999924 162035.89719999954 498522.2153999992 162044.52840000018 498529.37209999934 162051.3975000009 498521.1004999988</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
+    <Amantelbuis>
+        <Handle>5639</Handle>
+        <Materiaal>PVC</Materiaal>
+        <Diameter>110</Diameter>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <Thema>ET_LS</Thema>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>875215</GisId>
+        <AssetId>{CF349FEA-642D-43F3-9D36-21F208DEDCB2}</AssetId>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList>162195.21200000122 498641.21990000084 0 162165.126600001 498617.8828999996 0</gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Amantelbuis>
+    
+    <MSmof>
+        <Handle>5911</Handle>
+        <DatumAanleg>1971-06-14</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>53264168</GisId>
+        <AssetId>{D1185DFB-9CF4-42D6-BF83-9F8448E75D68}</AssetId>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    170509.942 369699.791 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSmof>
+    <MSoverdrachtspunt>
+        <Handle>55E9</Handle>
+        <DatumAanleg>2024-01-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Identificatie>MS-0123</Identificatie>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>6431</GisId>
+        <AssetId>{39437C1B-1F2C-4D8E-83CF-E55B6B9ADA57}</AssetId>
+        <Hoek>45</Hoek>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:pos>162155.78379999846 498519.8258999996 0</gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSoverdrachtspunt>
+    <Akunstwerk>
+        <Handle>145A</Handle>
+        <SoortKunstwerk>KATTENRUG</SoortKunstwerk>
+        <DatumAanleg>2024-01-10</DatumAanleg>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList> 21000.0 21000.0 -0.80 21000.0 22000.0 -0.80 22000.0 22000.0 -0.80</gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Akunstwerk>
+    <EAarddraad>
+        <Handle>2232</Handle>
+        <Doorsnede>"6"</Doorsnede>
+        <Geleidermateriaal>"Cu"</Geleidermateriaal>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Bewerking>"OPVULLEN"</Bewerking>
+        <Inmeetwijze>"Laser"</Inmeetwijze>
+        <Nauwkeurigheid>"onbekend"</Nauwkeurigheid>
+        <Netvlak>"HD"</Netvlak>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList> 21000.0 21000.0 -0.80 21000.0 22000.0 -0.80 22000.0 22000.0 -0.80</gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </EAarddraad>
+    <Aaanlegtechniek>
+        <Handle>1234</Handle>
+        <SoortAanlegTechniek>"PIPEBURSTING"</SoortAanlegTechniek>
+        <Bewerking>"OPVULLEN"</Bewerking>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Thema>"ET_MS"</Thema>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList> 21000.0 21000.0 -0.80 21000.0 22000.0 -0.80 22000.0 22000.0 -0.80</gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Aaanlegtechniek>
+    <ABeschermingsvlak>
+        <Handle>44AE</Handle>
+        <SoortBescherming>"AFDEKPLAAT"</SoortBescherming>
+        <Bewerking>"OPVULLEN"</Bewerking>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="2"
+                srsName="EPSG:28992">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>162051.3975000009 498521.1004999988 162042.91010000184 498514.01579999924 162035.89719999954 498522.2153999992 162044.52840000018 498529.37209999934 162051.3975000009 498521.1004999988</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </ABeschermingsvlak>
+</NLCSnetbeheerType>
