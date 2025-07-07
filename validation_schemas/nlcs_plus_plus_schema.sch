@@ -13,10 +13,6 @@
     <ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
     <ns prefix="nlcs" uri="NLCSnetbeheer"/>
 
-    <phase id="v10_r1">
-        <active pattern="v10-structure-aprojectreferentie-has-other-objects"/>
-    </phase>
-
     <phase id="v11_r1">
         <active pattern="v11-structure-aprojectreferentie-has-other-objects"/>
     </phase>
