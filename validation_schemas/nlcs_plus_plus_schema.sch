@@ -12,10 +12,15 @@
     <ns prefix="keronic" uri = "http://example.com/my-functions"/>
     <ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
     <ns prefix="nlcs" uri="NLCSnetbeheer"/>
-
+    
     <phase id="v11_r1">
         <active pattern="v11-structure-aprojectreferentie-has-other-objects"/>
     </phase>
 
+    <phase id="v11_r2">
+        <active pattern="v11-structure-statuses-allowed-for-tekening-type"/>
+    </phase>
+
     <include href="patterns/aprojectreferentie/v11/structure_aprojectreferentie_has_other_objects.sch"/>
-  </schema>
+    <include href="patterns/status/v11/structure_statuses_allowed_for_tekening_type.sch"/>
+</schema>
