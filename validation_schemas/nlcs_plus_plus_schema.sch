@@ -17,6 +17,5 @@
         <active pattern="v11-structure-aprojectreferentie-has-other-objects"/>
     </phase>
 
-    <include href="patterns/aprojectreferentie/v10/structure_aprojectreferentie_has_other_objects.sch"/>
     <include href="patterns/aprojectreferentie/v11/structure_aprojectreferentie_has_other_objects.sch"/>
   </schema>
