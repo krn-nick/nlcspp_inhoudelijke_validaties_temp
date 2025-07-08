@@ -256,4 +256,39 @@
                           )"/>
         <value-of select="$result"/>
     </function>
+    
+    <function name="keronic-geom:point-2d-inside-area-2d" as="xs:boolean">
+        <param name="point" as="xs:double*"/>
+        <param name="area" as="xs:double*"/>
+        
+        <variable name="area_x" select="$area[position() mod 2 = 1]" as="xs:double*"/>
+        <variable name="area_y" select="$area[position() mod 2 = 0]" as="xs:double*"/>
+        <variable name="area_point_count" select="count($area_x) - 1"/>
+        
+        <variable name="point_x" select="$point[1]"/>
+        <variable name="point_y" select="$point[2]"/>
+        
+        <variable name="intersections" as="xs:integer*">
+            <for-each select="1 to $area_point_count">
+                <variable name="i" select="."/>
+                <variable name="j" select="if ($i = 1) then $area_point_count else $i - 1"/>
+                
+                <variable name="xi" select="$area_x[$i]"/>
+                <variable name="yi" select="$area_y[$i]"/>
+                <variable name="xj" select="$area_x[$j]"/>
+                <variable name="yj" select="$area_y[$j]"/>
+                
+                <if test="($yi gt $point_y) != ($yj gt $point_y)">
+                    <variable name="x_intersect"
+                              select="($xj - $xi) * ($point_y - $yi) div ($yj - $yi) + $xi"/>
+                    <if test="$point_x lt $x_intersect">
+                        <sequence select="1"/>
+                    </if>
+                </if>
+            </for-each>
+        </variable>
+        
+        <value-of select="count($intersections) mod 2 = 1"/>
+    </function>
+
 </stylesheet>

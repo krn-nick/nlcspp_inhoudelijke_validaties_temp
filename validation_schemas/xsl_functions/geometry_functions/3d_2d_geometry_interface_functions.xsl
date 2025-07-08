@@ -178,4 +178,20 @@
                           $threshold
                           )"/>
     </function>
+    
+    
+    
+    
+    <function name="keronic:point-3d-inside-area-2d" as="xs:boolean">
+        <param name="point" as="xs:string*"/>        
+        <param name="area" as="xs:string*"/>
+        
+        <variable name="point_2d" select="keronic:cast-3d-to-2d-array($point)"/>
+        <variable name="d_point" select="keronic:cast-string-array-to-double-array($point_2d)" as="xs:double*"/>
+        <variable name="d_area" select="keronic:cast-string-array-to-double-array($area)" as="xs:double*"/>
+        
+        <value-of select="keronic-geom:point-2d-inside-area-2d(
+                          $d_point,
+                          $d_area)"/>
+    </function>
 </stylesheet>
