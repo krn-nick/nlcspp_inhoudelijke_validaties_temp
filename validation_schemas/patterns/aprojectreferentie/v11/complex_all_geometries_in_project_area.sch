@@ -17,23 +17,22 @@
     </rule>
 
     <!-- Line geometries -->
-    <!--
     <rule context="//nlcs:MSkabel | //nlcs:Amantelbuis | //nlcs:Akunstwerk | //nlcs:EAarddraad | //nlcs:Aanlegtechniek">
+        <let name="handle"
+            value="nlcs:Handle"/>
+        
         <let name="project_area_pos_list"
              value="tokenize(normalize-space(//nlcs:AprojectReferentie/nlcs:Geometry/gml:Polygon/gml:exterior/gml:LinearRing/gml:posList))"/>
 
         <let name="line_pos_list"
             value="tokenize(normalize-space((nlcs:Geometry/gml:LineString/gml:posList)))"/>
 
-        <assert id="assert-line-inside-project-area" test="false">
-            Project area: <value-of select="$project_area_pos_list"/>
-            Line: <value-of select="$line_pos_list"/>
+        <assert id="assert-line-inside-project-area" test="keronic:line-3d-inside-area-2d($line_pos_list, $project_area_pos_list)">
+            Line with handle <value-of select="$handle"/> is outside the project area.
         </assert>
     </rule>
-    -->
 
     <!-- Area geometries -->
-    <!--
     <rule context="//nlcs:MSstation | //nlcs:ABeschermingsvlak">
         <let name="project_area_pos_list"
              value="tokenize(normalize-space(//nlcs:AprojectReferentie/nlcs:Geometry/gml:Polygon/gml:exterior/gml:LinearRing/gml:posList))"/>
@@ -41,10 +40,9 @@
         <let name="area_pos_list"
             value="tokenize(normalize-space((nlcs:Geometry/gml:Polygon/gml:exterior/gml:LinearRing/gml:posList)))"/>
 
-        <assert id="assert-area-inside-project-area" test="false">
+        <assert id="assert-area-inside-project-area" test="1 = 1">
             Project area: <value-of select="$project_area_pos_list"/>
             Area: <value-of select="$area_pos_list"/>
         </assert>
     </rule>
-    -->
 </pattern>

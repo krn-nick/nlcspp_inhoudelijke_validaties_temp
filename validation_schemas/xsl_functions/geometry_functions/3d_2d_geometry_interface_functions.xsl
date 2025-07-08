@@ -194,4 +194,17 @@
                           $d_point,
                           $d_area)"/>
     </function>
+
+    <function name="keronic:line-3d-inside-area-2d" as="xs:boolean">
+        <param name="line" as="xs:string*"/>        
+        <param name="area" as="xs:string*"/>
+        
+        <variable name="line_2d" select="keronic:cast-3d-to-2d-array($line)"/>
+        <variable name="d_line" select="keronic:cast-string-array-to-double-array($line_2d)" as="xs:double*"/>
+        <variable name="d_area" select="keronic:cast-string-array-to-double-array($area)" as="xs:double*"/>
+        
+        <value-of select="keronic-geom:line-2d-intersects-area-2d(
+                          $d_line,
+                          $d_area)"/>
+    </function>
 </stylesheet>

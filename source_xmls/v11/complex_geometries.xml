@@ -129,7 +129,7 @@
         </Geometry>
     </Akunstwerk>    
     
-    <!-- Line line points outside but an edge inside -->
+    <!-- Line all points outside but an edge inside -->
     <EAarddraad>
         <Handle>2232</Handle>
         <Doorsnede>"6"</Doorsnede>
