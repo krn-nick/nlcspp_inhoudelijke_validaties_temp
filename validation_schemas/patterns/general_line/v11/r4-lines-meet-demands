@@ -33,7 +33,7 @@
           </assert>
           
           <assert id="assert-line-meets-angle-demand"
-                  test="not(keronic:line-3d-contains-larger-angle-than($geometry, '45'))">
+                  test="not(keronic:line-3d-contains-smaller-angle-than($geometry, '45'))">
                Een lijnsegment mag geen knikken bevatten! Het volgende object voldoet niet aan deze eis:
                
                <value-of select="$handle"/>
