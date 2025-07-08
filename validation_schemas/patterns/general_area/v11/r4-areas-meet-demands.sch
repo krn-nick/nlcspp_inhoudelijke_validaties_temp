@@ -20,13 +20,13 @@
                value="
                     for $i in 1 to $coords_amount - 1
                     return keronic:point-2d-to-point-2d-distance(
-                    $coords[(2 * $i) - 1], $coords[(2 * $i)],
-                    $coords[(2 * ($i + 1)) - 1], $coords[(2 * ($i + 1))]
-                    )
-                    "/>
+                              $coords[(2 * $i) - 1], $coords[(2 * $i)],
+                              $coords[(2 * ($i + 1)) - 1], $coords[(2 * ($i + 1))]
+                         )
+               "/>
           
           <assert id="assert-line-meets-length-demand"
-                  test="not(some $d in $distances satisfies $d le 10 or $d ge 50)">
+               test="not(some $d in $distances satisfies $d le 10 or $d ge 50)">
                Een lijnsegment mag niet korter dan 10 cm of langer dan 50 cm zijn! Het volgende object voeldoet niet aan deze eis:
                
                <value-of select="$handle"/>
