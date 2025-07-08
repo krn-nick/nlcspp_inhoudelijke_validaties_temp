@@ -13,10 +13,6 @@
     <ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
     <ns prefix="nlcs" uri="NLCSnetbeheer"/>
     
-    <phase id="v10_r1">
-        <active pattern="v10-structure-aprojectreferentie-has-other-objects"/>
-    </phase>
-    
     <phase id="v11_r1">
         <active pattern="v11-structure-aprojectreferentie-has-other-objects"/>
     </phase>
@@ -39,8 +35,8 @@
     <xsl:include href="xsl_functions/geometry_functions/depth_functions.xsl"/>
     <xsl:include href="xsl_functions/geometry_functions/depth_interface_functions.xsl"/>
     
-    <include href="patterns/aprojectreferentie/v10/structure_aprojectreferentie_has_other_objects.sch"/>
     <include href="patterns/aprojectreferentie/v11/structure_aprojectreferentie_has_other_objects.sch"/>
+    <include href="patterns/status/v11/structure_statuses_allowed_for_tekening_type.sch"/>
     <include href="patterns/general_line/v11/r4-lines-meet-demands"/>
     <include href="patterns/general_area/v11/r4-areas-meet-demands"/>
 </schema>
