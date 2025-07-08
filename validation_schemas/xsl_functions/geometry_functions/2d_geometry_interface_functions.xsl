@@ -179,5 +179,29 @@
                           $x2,
                           $y2)"/>
     </function>
-
+    
+    <function name="keronic:area-2d-interacts-with-area-2d" as="xs:boolean">
+        <param name="area1" as="xs:string*"/>
+        <param name="area2" as="xs:string*"/>
+        
+        <variable name="d_area1" select="keronic:cast-string-array-to-double-array($area1)" as="xs:double*"/>
+        <variable name="d_area2" select="keronic:cast-string-array-to-double-array($area2)" as="xs:double*"/>
+        
+        <value-of select="keronic-geom:area-2d-intersects-area-2d(
+                          $d_area1,
+                          $d_area2)"/>
+    </function>
+    
+    <function name="keronic:area-2d-inside-area-2d" as="xs:boolean">
+        <param name="area1" as="xs:string*"/>
+        <param name="area2" as="xs:string*"/>
+        
+        <variable name="d_area1" select="keronic:cast-string-array-to-double-array(keronic:cast-2d-to-3d-array($area1))" as="xs:double*"/>
+        <variable name="d_area2" select="keronic:cast-string-array-to-double-array(keronic:cast-2d-to-3d-array($area2))" as="xs:double*"/>
+        
+        <value-of select="keronic:line-3d-inside-area-2d(
+                          $d_area1,
+                          $d_area2
+        )"/>
+    </function>
 </stylesheet>

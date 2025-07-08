@@ -366,6 +366,13 @@
                            else 2"/>
     </function>
     
-    
+    <function name="keronic-geom:area-2d-intersects-area-2d">
+        <param name="area1" as="xs:double*"/>
+        <param name="area2" as="xs:double*"/>
+        
+        <value-of select="keronic-geom:line-2d-intersects-area-2d(
+                          $area1,
+                          $area2)"/>
+    </function>
 </stylesheet>
 
