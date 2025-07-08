@@ -21,6 +21,11 @@
         <active pattern="v11-structure-aprojectreferentie-has-other-objects"/>
     </phase>
 
+    <phase id="v11_r3">
+        <active pattern="v11-all-geometries-in-project-area"/>
+    </phase>
+
     <include href="patterns/aprojectreferentie/v10/structure_aprojectreferentie_has_other_objects.sch"/>
     <include href="patterns/aprojectreferentie/v11/structure_aprojectreferentie_has_other_objects.sch"/>
+    <include href="patterns/aprojectreferentie/v11/complex_all_geometries_in_project_area.sch"/>
   </schema>
