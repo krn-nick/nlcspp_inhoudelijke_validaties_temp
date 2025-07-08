@@ -44,9 +44,12 @@
 			<beschrijving>Een lijn en de omtrek van vlak moeten voldoen aan inmeeteisen</beschrijving>
 			<soort>Geometrie</soort>
 			<definitie> 
-				Een gml:Curve en de omtrek van een gml:Surface moeten voldoen aan inmeeteisen: 
-					- minimale en maximale afstand van (inmeet)punten
+				Een gml:Curve moet voldoen aan de volgende inmeeteisen: 
+					- minimale (10cm) en maximale (50m) afstand van (inmeet)punten
 					- mag geen knikken bevatten, hoek tussen segmenten > 45 graden.
+					
+				Een gml:Surface moet voldoen aan de volgende definitie:
+					- minimale (10cm) en maximale (50m) afstand van (inmeet)punten
 			</definitie>
 			<toelichting>Excel Nr 6: Alle Lijngeometrieën in het bestand moeten langer zijn dan 10cm (afkeur doen we per object waarvan de geometrie korter is). </toelichting>
 			<validatieObjecten> 
