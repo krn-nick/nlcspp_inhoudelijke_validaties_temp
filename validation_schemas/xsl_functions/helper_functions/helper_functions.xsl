@@ -2,7 +2,6 @@
 	        xmlns:math="http://www.w3.org/2005/xpath-functions/math"
 	        xmlns:keronic="http://example.com/my-functions"
 	        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-            xmlns:array="http://www.w3.org/2005/xpath-functions/array"
 	        version="3.0">
 
     <function name="keronic:vals-within-threshold" as="xs:boolean">
@@ -47,7 +46,7 @@
     <function name="keronic:split-pos-list-to-posses" as="xs:string*">
         <param name="pos_list" as="xs:string*"/>
 
-        <sequence select="for $index in 0 to ((count($pos_list) div 3) - 1)
+        <sequence select="for $index in 0 to (count($pos_list) div 3 - 1)
                           return
                           let $act_index := ($index * 3) + 1
                           return
@@ -67,7 +66,6 @@
                           if ($i mod 3 != 0) then $array-3d[$i] else ()
         "/>
     </function>
-
 
     <function name="keronic:atan2" as="xs:double">
     <param name="y" as="xs:double"/>

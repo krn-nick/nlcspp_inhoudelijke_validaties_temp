@@ -238,7 +238,7 @@
                 srsName="EPSG:28992">
                 <gml:exterior>
                     <gml:LinearRing>
-                        <gml:posList>170.0 120.0 210.0 110.0 220.0 70.0 170.0 120.0</gml:posList>
+                        <gml:posList>170.0 120.0 220.0 70.0 180.0 30.0 170.0 120.0</gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
             </gml:Polygon>

@@ -305,6 +305,7 @@
                     keronic-geom:point-2d-interacts-with-area-2d(
                     keronic:array-2d-get-nth-point($line, $i),
                     $area))"/>
+        
         <choose>
             <when test="$anyPointInside">
                 <value-of select="true()"/>
@@ -365,6 +366,14 @@
                     if ($cross_product = 0) then 0
                     else if ($cross_product &gt; 0) then 1
                                      else 2"/>
+    </function>
+    <function name="keronic-geom:area-2d-interacts-with-area-2d">
+        <param name="area1" as="xs:double*"/>
+        <param name="area2" as="xs:double*"/>
+        
+        <value-of select="keronic-geom:line-2d-interacts-with-area-2d(
+                          $area1,
+                          $area2)"/>
     </function>
 </stylesheet>
 
