@@ -52,16 +52,6 @@
                           if ($i mod 3 != 0) then $array-3d[$i] else ()
         "/>
     </function>
-    
-    <!-- This function will take a 2D coordinates array and convert it to 3d, setting the z of every coordinate to 0 -->
-    <function name="keronic:cast-2d-to-3d-array" as="xs:string*">
-        <param name="array-2d" as="xs:string*"/>
-        
-        <sequence select="
-                    for $i in 1 to ((count($array-2d) / 2)* 3)
-                    return if ($i mod 3 != 0) then $array-2d[$i] else '0'
-                    "/>
-    </function>
 
     <function name="keronic:atan2" as="xs:double">
     <param name="y" as="xs:double"/>
