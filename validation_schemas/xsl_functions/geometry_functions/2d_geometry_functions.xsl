@@ -255,7 +255,7 @@
         <value-of select="$result"/>
     </function>
     
-    <function name="keronic-geom:point-2d-inside-area-2d" as="xs:boolean">
+    <function name="keronic-geom:point-2d-interacts-with-area-2d" as="xs:boolean">
         <param name="point" as="xs:double*"/>
         <param name="area" as="xs:double*"/>
         
@@ -289,7 +289,7 @@
         <value-of select="count($intersections) mod 2 = 1"/>
     </function>
     
-    <function name="keronic-geom:line-2d-intersects-area-2d" as="xs:boolean">
+    <function name="keronic-geom:line-2d-interacts-with-area-2d" as="xs:boolean">
         <param name="line" as="xs:double*"/>
         <param name="area" as="xs:double*"/>
         
@@ -303,11 +303,10 @@
         
         <variable name="anyPointInside" select="
                     some $i in 1 to $line_point_count
-                    satisfies keronic-geom:point-2d-inside-area-2d(
+                    satisfies (
+                    keronic-geom:point-2d-interacts-with-area-2d(
                     ($line_x[$i], $line_y[$i]),
-                    $area
-                    )
-                    "/>
+                    $area))"/>
         
         <choose>
             <when test="$anyPointInside">
@@ -315,57 +314,68 @@
             </when>
             <otherwise>
                 <value-of select="
-                            some $li in 1 to $line_point_count
+                            some $list_index in 1 to $line_point_count
                             satisfies (
-                            some $ai in 1 to $area_point_count
+                            some $area_index in 1 to $area_point_count
                             satisfies (
                             keronic-geom:segments-intersect(
-                            $line_x[$li], $line_y[$li],
-                            $line_x[$li + 1], $line_y[$li + 1],
-                            $area_x[$ai], $area_y[$ai],
-                            $area_x[$ai + 1], $area_y[$ai + 1]
-                            )
-                            )
-                            )"/>
+                            $line_x[$list_index], $line_y[$list_index],
+                            $line_x[$list_index + 1], $line_y[$list_index + 1],
+                            $area_x[$area_index], $area_y[$area_index],
+                            $area_x[$area_index + 1], $area_y[$area_index + 1])))"/>
             </otherwise>
         </choose>        
     </function>
     
     <function name="keronic-geom:segments-intersect" as="xs:boolean">
-        <param name="x1" as="xs:double"/>
-        <param name="y1" as="xs:double"/>
-        <param name="x2" as="xs:double"/>
-        <param name="y2" as="xs:double"/>
-        <param name="x3" as="xs:double"/>
-        <param name="y3" as="xs:double"/>
-        <param name="x4" as="xs:double"/>
-        <param name="y4" as="xs:double"/>
+        <param name="segment_a_x1" as="xs:double"/>
+        <param name="segment_a_y1" as="xs:double"/>
+        <param name="segment_a_x2" as="xs:double"/>
+        <param name="segment_a_y2" as="xs:double"/>
+        <param name="segment_b_x1" as="xs:double"/>
+        <param name="segment_b_y1" as="xs:double"/>
+        <param name="segment_b_x2" as="xs:double"/>
+        <param name="segment_b_y2" as="xs:double"/>
         
-        <variable name="o1" select="keronic-geom:orientation($x1, $y1, $x2, $y2, $x3, $y3)"/>
-        <variable name="o2" select="keronic-geom:orientation($x1, $y1, $x2, $y2, $x4, $y4)"/>
-        <variable name="o3" select="keronic-geom:orientation($x3, $y3, $x4, $y4, $x1, $y1)"/>
-        <variable name="o4" select="keronic-geom:orientation($x3, $y3, $x4, $y4, $x2, $y2)"/>
+        <variable name="orientation_a_1" select="keronic-geom:orientation(
+                                                 $segment_b_x1, $segment_b_y1, 
+                                                 $segment_b_x2, $segment_b_y2, 
+                                                 $segment_a_x1, $segment_a_y1)"/>
+        <variable name="orientation_a_2" select="keronic-geom:orientation(
+                                                 $segment_b_x1, $segment_b_y1, 
+                                                 $segment_b_x2, $segment_b_y2, 
+                                                 $segment_a_x2, $segment_a_y2)"/>
+        <variable name="orientation_b_1" select="keronic-geom:orientation(
+                                                 $segment_a_x1, $segment_a_y1, 
+                                                 $segment_a_x2, $segment_a_y2, 
+                                                 $segment_b_x1, $segment_b_y1)"/>
+        <variable name="orientation_b_2" select="keronic-geom:orientation(
+                                                 $segment_a_x1, $segment_a_y1, 
+                                                 $segment_a_x2, $segment_a_y2, 
+                                                 $segment_b_x2, $segment_b_y2)"/>
         
         <value-of select="
-                    ($o1 != $o2 and $o3 != $o4)
-                    "/>
+                    ($orientation_a_1 != $orientation_a_2 and
+                    $orientation_b_1 != $orientation_b_2)"/>
     </function>
     
     <function name="keronic-geom:orientation" as="xs:integer">
-        <param name="px" as="xs:double"/>
-        <param name="py" as="xs:double"/>
-        <param name="qx" as="xs:double"/>
-        <param name="qy" as="xs:double"/>
-        <param name="rx" as="xs:double"/>
-        <param name="ry" as="xs:double"/>
+        <param name="segment_x1" as="xs:double"/>
+        <param name="segment_y1" as="xs:double"/>
+        <param name="segment_x2" as="xs:double"/>
+        <param name="segment_y2" as="xs:double"/>
+        <param name="point_x" as="xs:double"/>
+        <param name="point_y" as="xs:double"/>
+        
+        <variable name="cross_product" select="
+                    ($segment_y2 - $segment_y1) * ($point_x - $segment_x2) - 
+                    ($segment_x2 - $segment_x1) * ($point_y - $segment_y2)"/>
+        
         <sequence select="
-                    let $val := ($qy - $py) * ($rx - $qx) - ($qx - $px) * ($ry - $qy)
-                    return
-                    if ($val = 0) then 0
-                    else if ($val &gt; 0) then 1
-                           else 2"/>
+                    if ($cross_product = 0) then 0
+                    else if ($cross_product &gt; 0) then 1
+                                     else 2"/>
     </function>
-    
     <function name="keronic-geom:area-2d-intersects-area-2d">
         <param name="area1" as="xs:double*"/>
         <param name="area2" as="xs:double*"/>
