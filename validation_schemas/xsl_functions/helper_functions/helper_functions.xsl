@@ -2,6 +2,7 @@
 	        xmlns:math="http://www.w3.org/2005/xpath-functions/math"
 	        xmlns:keronic="http://example.com/my-functions"
 	        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:array="http://www.w3.org/2005/xpath-functions/array"
 	        version="3.0">
 
     <function name="keronic:vals-within-threshold" as="xs:boolean">
@@ -17,6 +18,20 @@
                 <value-of select="false()"/>
             </otherwise>
         </choose>
+    </function>
+    
+    <function name="keronic:array-2d-get-nth-point" as="xs:double*">
+        <param name="d_array" as="xs:double*"/>
+        <param name="n" as="xs:integer"/>
+        
+        <sequence select="[$d_array[2 * $n - 1], $d_array[2 * $n]]"/>
+    </function>
+
+    <function name="keronic:array-3d-get-nth-point" as="xs:double*">
+        <param name="d_array" as="xs:double*"/>
+        <param name="n" as="xs:integer"/>
+        
+        <sequence select="[$d_array[3 * $n - 2], $d_array[3 * $n - 1], $d_array[3 * $n]]"/>
     </function>
 
     <function name="keronic:cast-string-array-to-double-array" as="xs:double*">
