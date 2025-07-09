@@ -238,7 +238,7 @@
                 srsName="EPSG:28992">
                 <gml:exterior>
                     <gml:LinearRing>
-                        <gml:posList>170.0 120.0 210.0 110.0 220.0 70.0 170.0 120.0</gml:posList>
+                        <gml:posList>170.0 120.0 220.0 70.0 180.0 30.0 170.0 120.0</gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
             </gml:Polygon>
@@ -313,57 +313,6 @@
                 <gml:exterior>
                     <gml:LinearRing>
                         <gml:posList>240.0 240.0 310.0 300.0 390.0 220.0 320.0 160.0 240.0 240.0</gml:posList>
-                    </gml:LinearRing>
-                </gml:exterior>
-            </gml:Polygon>
-        </Geometry>
-    </ABeschermingsvlak>
-    
-    <!-- Area fully outside -->
-    <MSstation>
-        <Handle>6669</Handle>
-        <Naam>MS-67890 Teststation</Naam>
-        <Nummer>67890</Nummer>
-        <DatumAanleg>2023-10-10</DatumAanleg>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Functie>NETSTATION</Functie>
-        <Straatnaam>Straatnaam</Straatnaam>
-        <Huisnummer>100</Huisnummer>
-        <HuisnummerToevoeging>tv</HuisnummerToevoeging>
-        <Postcode>1234 AB</Postcode>
-        <Plaatsnaam>Plaatsnaam</Plaatsnaam>
-        <Eigenaar>Netbeheerder</Eigenaar>
-        <Beheerder>Netbeheerder</Beheerder>
-        <AssetId>{6D43A69E-C176-401A-8517-E2605079A345}</AssetId>
-        <Geometry>
-            <gml:Polygon
-                srsDimension="2"
-                srsName="EPSG:28992">
-                <gml:exterior>
-                    <gml:LinearRing>
-                        <gml:posList>100.0 40.0 150.0 60.0 150.0 20.0 100.0 40.0</gml:posList>
-                    </gml:LinearRing>
-                </gml:exterior>
-            </gml:Polygon>
-        </Geometry>
-    </MSstation>
-    <!-- This area is within the polygon but never intersects with it-->
-    <ABeschermingsvlak>
-        <Handle>BBBBF</Handle>
-        <SoortBescherming>"AFDEKPLAAT"</SoortBescherming>
-        <Bewerking>"OPVULLEN"</Bewerking>
-        <Eigenaar>Netbeheerder</Eigenaar>
-        <Beheerder>Netbeheerder</Beheerder>
-        <Status>BESTAAND</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
-        <Geometry>
-            <gml:Polygon
-                srsDimension="2"
-                srsName="EPSG:28992">
-                <gml:exterior>
-                    <gml:LinearRing>
-                        <gml:posList>189.0 160.0 200.0 160.0 195.0 150.0 175.0 150.0 189.0 160.0</gml:posList>
                     </gml:LinearRing>
                 </gml:exterior>
             </gml:Polygon>

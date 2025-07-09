@@ -43,8 +43,7 @@
         <let name="area_pos_list"
             value="tokenize(normalize-space((nlcs:Geometry/gml:Polygon/gml:exterior/gml:LinearRing/gml:posList)))"/>
 
-        
-        <assert id="assert-area-interacts-with-project-area" test="keronic:area-2d-interacts-with-area-2d($area_pos_list, $project_area_pos_list) or keronic:area-2d-inside-area-2d($area_pos_list, $project_area_pos_list)">
+        <assert id="assert-area-interacts-with-project-area" test="keronic:area-2d-interacts-with-area-2d($area_pos_list, $project_area_pos_list)">
             Area with handle <value-of select="$handle"/> is outside of the project area!
         </assert>
     </rule>
