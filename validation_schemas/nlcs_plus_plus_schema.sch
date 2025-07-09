@@ -16,11 +16,15 @@
     <phase id="v11_r1">
         <active pattern="v11-structure-aprojectreferentie-has-other-objects"/>
     </phase>
-    
+
     <phase id="v11_r2">
         <active pattern="v11-structure-statuses-allowed-for-tekening-type"/>
     </phase>
 
+    <phase id="v11_r3">
+        <active pattern="v11-all-geometries-in-project-area"/>
+    </phase>
+    
     <phase id="v11_r4">
         <active pattern="r4-lines-meet-demand"/>
         <active pattern="r4-areas-meet-demand"/>
@@ -41,6 +45,7 @@
     
     <include href="patterns/aprojectreferentie/v11/structure_aprojectreferentie_has_other_objects.sch"/>
     <include href="patterns/status/v11/structure_statuses_allowed_for_tekening_type.sch"/>
+    <include href="patterns/aprojectreferentie/v11/complex_all_geometries_in_project_area.sch"/>
     <include href="patterns/general_line/v11/r4-lines-meet-demands.sch"/>
     <include href="patterns/general_area/v11/r4-areas-meet-demands.sch"/>
 </schema>

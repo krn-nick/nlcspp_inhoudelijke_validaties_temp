@@ -179,5 +179,16 @@
                           $x2,
                           $y2)"/>
     </function>
-
+    
+    <function name="keronic:area-2d-interacts-with-area-2d" as="xs:boolean">
+        <param name="area_1" as="xs:string*"/>
+        <param name="area_2" as="xs:string*"/>
+        
+        <variable name="d_area_1" select="keronic:cast-string-array-to-double-array($area_1)" as="xs:double*"/>
+        <variable name="d_area_2" select="keronic:cast-string-array-to-double-array($area_2)" as="xs:double*"/>
+        
+        <value-of select="keronic-geom:area-2d-interacts-with-area-2d(
+                          $d_area_1,
+                          $d_area_2)"/>
+    </function>
 </stylesheet>

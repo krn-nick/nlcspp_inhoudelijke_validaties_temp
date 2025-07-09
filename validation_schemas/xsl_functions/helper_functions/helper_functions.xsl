@@ -18,6 +18,20 @@
             </otherwise>
         </choose>
     </function>
+    
+    <function name="keronic:array-2d-get-nth-point" as="xs:double*">
+        <param name="d_array" as="xs:double*"/>
+        <param name="n" as="xs:integer"/>
+        
+        <sequence select="[$d_array[2 * $n - 1], $d_array[2 * $n]]"/>
+    </function>
+
+    <function name="keronic:array-3d-get-nth-point" as="xs:double*">
+        <param name="d_array" as="xs:double*"/>
+        <param name="n" as="xs:integer"/>
+        
+        <sequence select="[$d_array[3 * $n - 2], $d_array[3 * $n - 1], $d_array[3 * $n]]"/>
+    </function>
 
     <function name="keronic:cast-string-array-to-double-array" as="xs:double*">
         <param name="string-array" as="xs:string*"/>
@@ -32,7 +46,7 @@
     <function name="keronic:split-pos-list-to-posses" as="xs:string*">
         <param name="pos_list" as="xs:string*"/>
 
-        <sequence select="for $index in 0 to ((count($pos_list) div 3) - 1)
+        <sequence select="for $index in 0 to (count($pos_list) div 3 - 1)
                           return
                           let $act_index := ($index * 3) + 1
                           return
@@ -52,7 +66,6 @@
                           if ($i mod 3 != 0) then $array-3d[$i] else ()
         "/>
     </function>
-
 
     <function name="keronic:atan2" as="xs:double">
     <param name="y" as="xs:double"/>
