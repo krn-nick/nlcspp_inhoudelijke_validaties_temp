@@ -60,6 +60,24 @@
         </Geometry>
     </MSoverdrachtspunt>
     
+    <!-- Point exactly on edge -->
+    <MSmof>
+        <Handle>5912</Handle>
+        <DatumAanleg>1971-06-14</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>53264169</GisId>
+        <AssetId>{D1185DFB-9CF4-42D6-BF83-9F8448E75D69}</AssetId>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>170 160.0 0</gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSmof>
+    
     <!-- Line fully inside -->
     <MSkabel>
         <Handle>6301</Handle>
@@ -150,6 +168,52 @@
             </gml:LineString>
         </Geometry>
     </EAarddraad>
+    
+    <!-- Line one point exactly on edge -->
+    <Aaanlegtechniek>
+        <Handle>1234</Handle>
+        <SoortAanlegTechniek>"PIPEBURSTING"</SoortAanlegTechniek>
+        <Bewerking>"OPVULLEN"</Bewerking>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Thema>"ET_MS"</Thema>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList>170.0 300.0 0 190.0 200.0 0</gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Aaanlegtechniek>
+    
+    <!-- Line two points exactly on edge -->
+    <MSkabel>
+        <Handle>6302</Handle>
+        <Uitvoering>3x240Alrm as35</Uitvoering>
+        <Kabelopbouw>YMeKrvaslqwd</Kabelopbouw>
+        <Fabrikant>NKF</Fabrikant>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>RESERVE</Bedrijfstoestand>
+        <Spanningsniveau>10 kV</Spanningsniveau>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <Subnettype>DISTRIBUTIE</Subnettype>
+        <FaseAanduiding>3 Fasen</FaseAanduiding>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>83413</GisId>
+        <AssetId>{38518CAF-0F42-448D-8CD6-1E655152A0AE}</AssetId>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList>190.0 250.0 0 200.0 200.0 0 220.0 200.0 0 230.0 250.0 0</gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
 
     <!-- Area fully outside -->
     <MSstation>
