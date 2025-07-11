@@ -73,10 +73,31 @@
             <gml:Point
                 srsDimension="3"
                 srsName="EPSG:7415">
-                <gml:pos>170 160.0 0</gml:pos>
+                <gml:pos>170.0 160.0 0</gml:pos>
             </gml:Point>
         </Geometry>
     </MSmof>
+    
+    <!-- Point outside in concave area -->
+    <MSoverdrachtspunt>
+        <Handle>55E9</Handle>
+        <DatumAanleg>2024-01-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Identificatie>MS-0123</Identificatie>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>6431</GisId>
+        <AssetId>{39437C1B-1F2C-4D8E-83CF-E55B6B9ADA57}</AssetId>
+        <Hoek>45</Hoek>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:pos>150.0 140.0 0</gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSoverdrachtspunt>
     
     <!-- Line fully inside -->
     <MSkabel>
@@ -318,4 +339,34 @@
             </gml:Polygon>
         </Geometry>
     </ABeschermingsvlak>
+    
+    <!-- Area points fully outside, no edges crossing, but covers entire polygon-->
+    <MSstation>
+        <Handle>5640</Handle>
+        <Naam>MS-54321 Teststation</Naam>
+        <Nummer>54321</Nummer>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Functie>NETSTATION</Functie>
+        <Straatnaam>Straatnaam</Straatnaam>
+        <Huisnummer>100</Huisnummer>
+        <HuisnummerToevoeging>tv</HuisnummerToevoeging>
+        <Postcode>1234 AB</Postcode>
+        <Plaatsnaam>Plaatsnaam</Plaatsnaam>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <AssetId>{6D43A69E-C176-401A-8517-E2605079A346}</AssetId>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="2"
+                srsName="EPSG:28992">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>120.0 240.0 400.0 240.0 400.0 0.0 120.0 0.0</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
 </NLCSnetbeheerType>
