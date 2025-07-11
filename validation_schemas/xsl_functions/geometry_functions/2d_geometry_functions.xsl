@@ -371,9 +371,18 @@
         <param name="area1" as="xs:double*"/>
         <param name="area2" as="xs:double*"/>
         
-        <value-of select="keronic-geom:line-2d-interacts-with-area-2d(
+        <choose>
+            <when test="keronic-geom:line-2d-interacts-with-area-2d(
+                          $area2,
+                          $area1)">
+                <value-of select="true()"/>
+            </when>
+            <otherwise>
+                <value-of select="keronic-geom:line-2d-interacts-with-area-2d(
                           $area1,
                           $area2)"/>
+            </otherwise>
+        </choose>
     </function>
 </stylesheet>
 
