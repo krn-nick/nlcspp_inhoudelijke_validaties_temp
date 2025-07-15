@@ -51,7 +51,6 @@
         <Spanningsniveau>10 kV</Spanningsniveau>
         <Inmeetwijze>GPS</Inmeetwijze>
         <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
-        <Subnettype>DISTRIBUTIE</Subnettype>
         <FaseAanduiding>3 Fasen</FaseAanduiding>
         <Eigenaar>Netbeheerder</Eigenaar>
         <Beheerder>Netbeheerder</Beheerder>
