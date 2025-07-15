@@ -14,7 +14,7 @@
 		<xsl:variable name="source-doc" select="."/>
 		<xsl:variable name="input-uri" select="base-uri($source-doc)"/>
 		<xsl:variable name="file-name" select="tokenize($input-uri, '/')[last()]"/>
-		<xsl:variable name="output-base" select="replace($input-uri, '^.*?xml_templates', 'xml_output')"/>
+		<xsl:variable name="output-base" select="replace($input-uri, '^.*?templates', 'validation_data')"/>
 		<xsl:variable name="base-dir" select="substring-before($output-base, $file-name)"/>
 		
 		<!-- For each scope -->
