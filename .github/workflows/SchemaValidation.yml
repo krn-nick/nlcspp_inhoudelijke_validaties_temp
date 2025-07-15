@@ -1,0 +1,24 @@
+name: Schema Validation CI
+
+on:
+  workflow_run:
+    workflows:
+      - Doc Validation CI
+
+jobs:
+  build:
+    runs-on: unbuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses:	actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+      - name: Generate validation data
+        run: java -jar saxon-he.jar -s:xml_templates/v11/R.1/passing_template_test.xml -xsl:transformations/placeholder-replace.xsl
+      - name: Validate
+        run: java -jar schxslt-cli.jar -d xml_output/
+          
+    
