@@ -1,15 +1,15 @@
 name: Schema Validation CI
 
 on:
-  push:
-    branches: "**"
-  pull_request:
-    branches: [ "main" ]
+  workflow_run: 
+    workflows:
+      - Doc Validation CI
+    types:
+      - completed
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK
