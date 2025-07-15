@@ -7,18 +7,24 @@
         <let name="statuses"
             value="keronic:get-statuses-where-gisid-required()"/>
         
+        <let name="status-requires-id"
+            value="some $status in ($statuses) satisfies($status = nlcs:Status)"/>
+        
+        <let name="statuses-in-object"
+            value="nlcs:GisId and nlcs:AssetId"/>
+        
         <assert id="gisId-assetId-not-unset-if-new-revision-existing"
-            test="not(some $status in ($statuses) satisfies($status = nlcs:Status)) or (nlcs:GisId and nlcs:AssetId)">
-            Het gis id en assset id mogen niet leeg zijn als de status Revisie, Bestaand of Verwijderd is! Bij het volgende object is het leeg:
+            test="not($status-requires-id) or $statuses-in-object">
+            Het gis id en assset id mogen niet leeg zijn als de status <value-of select="$statuses"/> is! Bij het volgende object is het leeg:
             
             <value-of select="$handle"/>
         </assert>
         
         <assert id="gisId-assetId-are-unset-if-new"
-            test="some $status in ($statuses) satisfies($status = nlcs:Status) or (not(nlcs:GisId) and not(nlcs:AssetId))">
-            Het gis id en assset id MOETEN leeg zijn als de status NIET Revisie, Bestaand of Verwijderd is! Bij het volgende object is het leeg:
+            test="$status-requires-id or not(nlcs:GisId or nlcs:AssetId)">
+            Het gis id en assset id MOETEN leeg zijn als de status NIET <value-of select="$statuses"/> is! Bij het volgende object is het leeg:
             
-            <value-of select="$statuses"/>
+            <value-of select="$handle"/>
         </assert>
     </rule>
 </pattern>
