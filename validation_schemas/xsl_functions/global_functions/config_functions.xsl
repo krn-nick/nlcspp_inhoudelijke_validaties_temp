@@ -5,7 +5,7 @@
             xmlns:map="http://www.w3.org/2005/xpath-functions/map"
             version="3.0">
 
-  <variable name="config_file" select= "document('../../../configuration/config.xml')"/>
+  <variable name="config_file" select= "document('../../../doc/configuration/config.xml')"/>
   <variable name="language" select= "'nl'"/>
   <variable name="translation_file" select= "document('../../../localization/messages.xml')"/>
 
@@ -117,6 +117,10 @@
       </call-template>
     </variable>
     <value-of select="$result"/>
+  </function>
+  
+  <function name="keronic:get-statuses-where-gisid-required" as="xs:string*">
+    <sequence select="$config_file/config/V11/GisIdRequiredStatuses/Status"/>
   </function>
 
   <!-- recursively replaces placeholder strings with values from a keyed map -->
