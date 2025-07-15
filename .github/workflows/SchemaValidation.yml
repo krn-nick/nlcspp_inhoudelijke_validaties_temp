@@ -1,11 +1,10 @@
 name: Schema Validation CI
 
 on:
-  workflow_run:
-    workflows:
-      - Doc Validation CI
-    types:
-      - completed
+  push:
+    branches: "**"
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
