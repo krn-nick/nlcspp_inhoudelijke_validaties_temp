@@ -4,6 +4,8 @@ on:
   workflow_run:
     workflows:
       - Doc Validation CI
+    types:
+      - completed
 
 jobs:
   build:
@@ -19,6 +21,6 @@ jobs:
       - name: Generate validation data
         run: java -jar saxon-he.jar -s:xml_templates/v11/R.1/passing_template_test.xml -xsl:transformations/placeholder-replace.xsl
       - name: Validate
-        run: java -jar schxslt-cli.jar -d xml_output/
+        run: java -jar schxslt-cli.jar -d xml_output/v11/R.1/passing/Bestaande_Situatie_alle_bedrijfstoestanden/BESTAAND/IN_BEDRIJF_template_test.xml -s validation_schemas/nlcs_plus_plus_schema.sch -p "v11_r1" -v
           
     
