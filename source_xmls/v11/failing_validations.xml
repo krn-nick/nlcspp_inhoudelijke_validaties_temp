@@ -93,6 +93,34 @@
             </gml:Polygon>
         </Geometry>
     </MSstation>
+    <MSstation>
+        <Handle>5638</Handle>
+        <Naam>MS-12345 Teststation</Naam>
+        <Nummer>12345</Nummer>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>NIEUW</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Functie>NETSTATION</Functie>
+        <Straatnaam>Straatnaam</Straatnaam>
+        <Huisnummer>100</Huisnummer>
+        <HuisnummerToevoeging>tv</HuisnummerToevoeging>
+        <Postcode>1234 AB</Postcode>
+        <Plaatsnaam>Plaatsnaam</Plaatsnaam>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <AssetId>{6D43A69E-C176-401A-8517-E2605079A344}</AssetId>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="2"
+                srsName="EPSG:28992">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>162051.3975000009 498521.1004999988 162042.91010000184 498514.01579999924 162035.89719999954 498522.2153999992 162044.52840000018 498529.37209999934 262051.3975000009 498521.1004999988</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
     <ABeschermingsvlak>
         <Handle>44AE</Handle>
         <SoortBescherming>"AFDEKPLAAT"</SoortBescherming>

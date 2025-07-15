@@ -1,0 +1,9 @@
+<config>
+    <V11>
+        <GisIdRequiredStatuses>
+            <Status>BESTAAND</Status>
+            <Status>REVISIE</Status>
+            <Status>VERWIJDERD</Status>
+        </GisIdRequiredStatuses>
+    </V11>
+</config>

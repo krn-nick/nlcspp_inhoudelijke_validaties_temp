@@ -80,6 +80,8 @@
         <Postcode>1234 AB</Postcode>
         <Plaatsnaam>Plaatsnaam</Plaatsnaam>
         <Eigenaar>Netbeheerder</Eigenaar>
+        <GisId>83412</GisId>
+        <AssetId>{38518CAF-0F42-448D-8CD6-1E655152A0AD}</AssetId>
         <Beheerder>Netbeheerder</Beheerder>
         <AssetId>{6D43A69E-C176-401A-8517-E2605079A344}</AssetId>
         <Geometry>
