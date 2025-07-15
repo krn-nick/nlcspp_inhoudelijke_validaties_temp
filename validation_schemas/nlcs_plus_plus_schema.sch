@@ -33,6 +33,10 @@
     <phase id="v11_r5">
         <active pattern="r5-gisid-assetid-check"/>
     </phase>
+
+    <phase id="v11_r6">
+        <active pattern="r6-elec-objects-have-required-fields"/>
+    </phase>
     
     <xsl:include href="xsl_functions/global_functions/config_functions.xsl"/>
     <xsl:include href="xsl_functions/helper_functions/helper_functions.xsl"/>
@@ -53,4 +57,5 @@
     <include href="patterns/general_line/v11/r4-lines-meet-demands.sch"/>
     <include href="patterns/general_area/v11/r4-areas-meet-demands.sch"/>
     <include href="patterns/general_objects/v11/r5-gisid-assetid-check.sch"/>
+    <include href="patterns/elec/v11/r6-elec-objects-have-required-fields.sch"/>
 </schema>
