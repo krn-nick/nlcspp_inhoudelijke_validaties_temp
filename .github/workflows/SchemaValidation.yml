@@ -2,8 +2,7 @@ name: Schema Validation CI
 
 on:
   workflow_run: 
-    workflows:
-      - Doc Validation CI
+    workflows: [Doc Validation CI]
     types:
       - completed
 
