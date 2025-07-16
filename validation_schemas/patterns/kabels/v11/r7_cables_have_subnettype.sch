@@ -4,7 +4,7 @@
         <let name="subnettype"
             value="nlcs:Subnettype"/>
         
-        <assert test="$subnettype">
+        <assert test="keronic:element-exists-and-not-empty($subnettype)">
                 Het object <value-of select="nlcs:Handle"/> moet een waarde voor Subnettype hebben!
         </assert>
     </rule>
