@@ -51,7 +51,31 @@
         <Spanningsniveau>10 kV</Spanningsniveau>
         <Inmeetwijze>GPS</Inmeetwijze>
         <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
-        <Subnettype>DISTRIBUTIE</Subnettype>
+        <FaseAanduiding>3 Fasen</FaseAanduiding>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>83412</GisId>
+        <AssetId>{38518CAF-0F42-448D-8CD6-1E655152A0AD}</AssetId>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList> 21000.0 21000.0 -0.80 21300.0 21000.0 -0.80 23100.0 21100.0 -0.80 </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    <MSkabel>
+        <Handle>ABCD</Handle>
+        <Uitvoering>3x240Alrm as35</Uitvoering>
+        <Kabelopbouw>YMeKrvaslqwd</Kabelopbouw>
+        <Fabrikant>NKF</Fabrikant>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>RESERVE</Bedrijfstoestand>
+        <Spanningsniveau>10 kV</Spanningsniveau>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Subnettype></Subnettype>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
         <FaseAanduiding>3 Fasen</FaseAanduiding>
         <Eigenaar>Netbeheerder</Eigenaar>
         <Beheerder>Netbeheerder</Beheerder>

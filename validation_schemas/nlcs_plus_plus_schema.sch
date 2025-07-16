@@ -16,11 +16,11 @@
     <phase id="v11_r1">
         <active pattern="v11-structure-aprojectreferentie-has-other-objects"/>
     </phase>
-
+    
     <phase id="v11_r2">
         <active pattern="v11-structure-statuses-allowed-for-tekening-type"/>
     </phase>
-
+    
     <phase id="v11_r3">
         <active pattern="v11-all-geometries-in-project-area"/>
     </phase>
@@ -29,9 +29,13 @@
         <active pattern="r4-lines-meet-demand"/>
         <active pattern="r4-areas-meet-demand"/>
     </phase>
-
+    
     <phase id="v11_r5">
         <active pattern="r5-gisid-assetid-check"/>
+    </phase>
+    
+    <phase id="v11_r7">
+        <active pattern="r7_cables_have_subnettype"/>
     </phase>
     
     <xsl:include href="xsl_functions/global_functions/config_functions.xsl"/>
@@ -53,4 +57,5 @@
     <include href="patterns/general_line/v11/r4-lines-meet-demands.sch"/>
     <include href="patterns/general_area/v11/r4-areas-meet-demands.sch"/>
     <include href="patterns/general_objects/v11/r5-gisid-assetid-check.sch"/>
+    <include href="patterns/kabels/v11/r7_cables_have_subnettype.sch"/>
 </schema>
