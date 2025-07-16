@@ -65,6 +65,30 @@
         </Geometry>
     </MSkabel>
     <MSkabel>
+        <Handle>B0A5</Handle>
+        <Uitvoering>3x240Alrm as35</Uitvoering>
+        <Kabelopbouw>YMeKrvaslqwd</Kabelopbouw>
+        <Fabrikant>NKF</Fabrikant>
+        <DatumAanleg>2027-10-10</DatumAanleg>
+        <Status>BESTAAND</Status>
+        <Bedrijfstoestand>RESERVE</Bedrijfstoestand>
+        <Spanningsniveau>10 kV</Spanningsniveau>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <FaseAanduiding>3 Fasen</FaseAanduiding>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>83412</GisId>
+        <AssetId>{38518CAF-0F42-448D-8CD6-1E655152A0AD}</AssetId>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList> 21000.0 21000.0 -0.80 21300.0 21000.0 -0.80 23100.0 21100.0 -0.80 </gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </MSkabel>
+    <MSkabel>
         <Handle>ABCD</Handle>
         <Uitvoering>3x240Alrm as35</Uitvoering>
         <Kabelopbouw>YMeKrvaslqwd</Kabelopbouw>
@@ -122,6 +146,33 @@
         <Naam>MS-12345 Teststation</Naam>
         <Nummer>12345</Nummer>
         <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>NIEUW</Status>
+        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Functie>NETSTATION</Functie>
+        <Straatnaam>Straatnaam</Straatnaam>
+        <Huisnummer>100</Huisnummer>
+        <HuisnummerToevoeging>tv</HuisnummerToevoeging>
+        <Postcode>1234 AB</Postcode>
+        <Plaatsnaam>Plaatsnaam</Plaatsnaam>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <AssetId>{6D43A69E-C176-401A-8517-E2605079A344}</AssetId>
+        <Geometry>
+            <gml:Polygon
+                srsDimension="2"
+                srsName="EPSG:28992">
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList>162051.3975000009 498521.1004999988 162042.91010000184 498514.01579999924 162035.89719999954 498522.2153999992 162044.52840000018 498529.37209999934 262051.3975000009 498521.1004999988</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </Geometry>
+    </MSstation>
+    <MSstation>
+        <Handle>5111</Handle>
+        <Naam>MS-12345 Teststation</Naam>
+        <Nummer>12345</Nummer>
         <Status>NIEUW</Status>
         <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
         <Functie>NETSTATION</Functie>

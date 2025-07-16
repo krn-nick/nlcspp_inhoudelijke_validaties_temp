@@ -38,6 +38,10 @@
         <active pattern="r7_cables_have_subnettype"/>
     </phase>
     
+    <phase id="v11_r9">
+        <active pattern="r9-objects-have-valid-date"/>
+    </phase>
+    
     <xsl:include href="xsl_functions/global_functions/config_functions.xsl"/>
     <xsl:include href="xsl_functions/helper_functions/helper_functions.xsl"/>
     <xsl:include href="xsl_functions/geometry_functions/2d_geometry_functions.xsl"/>
@@ -58,4 +62,5 @@
     <include href="patterns/general_area/v11/r4-areas-meet-demands.sch"/>
     <include href="patterns/general_objects/v11/r5-gisid-assetid-check.sch"/>
     <include href="patterns/kabels/v11/r7_cables_have_subnettype.sch"/>
+    <include href="patterns/general_objects/v11/r9-objects-have-valid-date.sch"/>
 </schema>
