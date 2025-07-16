@@ -3,11 +3,17 @@
     <rule context="//nlcs:MSstation | //nlcs:MSkabel | //nlcs:MSmof | //nlcs:MSoverdrachtspunt">
         
         <let name="datumaanleg"
-            value="nlcs:DatumAanleg"
-            as="xs:date"/>
+            value="nlcs:DatumAanleg"/>
         
+        
+        <assert id="date-exists"
+            test="$datumaanleg">
+            De datumaanleg van object <value-of select="nlcs:Handle"/> bestaat niet!
+        </assert>
+        
+        <!-- Only flag this if the datumaanleg exists, otherwise the first assert will catch it anyway -->
         <assert id="date-not-in-future"
-            test="$datumaanleg le current-date()">
+            test="if ($datumaanleg) then xs:date($datumaanleg) le current-date() else true()">
             De datumaanleg van object <value-of select="nlcs:Handle"/> ligt in de toekomst!
         </assert>
     </rule>
