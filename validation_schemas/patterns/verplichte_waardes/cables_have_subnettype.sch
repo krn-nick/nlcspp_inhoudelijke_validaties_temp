@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="r7_cables_have_subnettype">
+<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="v11-cables-have-subnettype">
     <rule context="//nlcs:MSkabel">
         <let name="subnettype"
             value="nlcs:Subnettype"/>
