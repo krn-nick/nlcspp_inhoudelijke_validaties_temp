@@ -4,14 +4,14 @@
         <let name="handle" 
             value="nlcs:Handle"/>
     
-        <let name="inmeetwijze"
-            value="nlcs:Inmeetwijze"/>
+        <let name="inmeetwijze_is_valid"
+            value="keronic:element-exists-and-not-empty(nlcs:Inmeetwijze)"/>
 
-        <let name="nauwkeurigheid"
-            value="nlcs:Nauwkeurigheid"/>
+        <let name="nauwkeurigheid_is_valid"
+            value="keronic:element-exists-and-not-empty(nlcs:Nauwkeurigheid)"/>
         
         <assert id="elec-objects-does-not-have-inmeetwijze-or-nauwkeurigheid"
-            test="string($inmeetwijze) != '' and string($nauwkeurigheid) != ''">
+            test="$inmeetwijze_is_valid and $nauwkeurigheid_is_valid">
             Object <value-of select="$handle"/> moet een inmeetwijze en nauwkeurigheid hebben.
         </assert>
     </rule>
