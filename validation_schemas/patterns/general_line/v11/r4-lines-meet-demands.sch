@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="v11-lines-meet-demands">
+<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="r4-lines-meet-demand">
      <rule context="//nlcs:MSkabel | //nlcs:EAarddraad | //nlcs:AaanlegTechniek | //nlcs:Akunstwerk">
           <let name="handle"
                value="nlcs:Handle"/>

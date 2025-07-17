@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="v11-statuses-allowed-for-tekening-type">
+<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="v11-structure-statuses-allowed-for-tekening-type">
     <rule context="//nlcs:NLCSnetbeheerType">
         
         <let name="tekening_type"

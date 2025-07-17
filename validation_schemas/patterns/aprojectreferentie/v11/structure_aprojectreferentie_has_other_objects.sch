@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="v11-aprojectreferentie-has-other-objects">
+<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="v11-structure-aprojectreferentie-has-other-objects">
     <rule context="//nlcs:NLCSnetbeheerType">
         <let name="nlcs_objecten"
              value="*[not(self::nlcs:VersieNummer or self::nlcs:AprojectReferentie)]"/>
@@ -14,4 +14,3 @@
         </assert>
     </rule>
 </pattern>
-
