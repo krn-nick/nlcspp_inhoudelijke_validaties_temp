@@ -46,13 +46,16 @@
             </gml:LineString>
         </Geometry>
     </MSkabel>
+    
     <MSstation>
         <Handle>5638</Handle>
         <Naam>MS-12345 Teststation</Naam>
         <Nummer>12345</Nummer>
         <DatumAanleg>2023-10-10</DatumAanleg>
         <Status>{{STATUS}}</Status>
-        <Bedrijfstoestand>IN BEDRIJF</Bedrijfstoestand>
+        <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
         <Functie>NETSTATION</Functie>
         <Straatnaam>Straatnaam</Straatnaam>
         <Huisnummer>100</Huisnummer>
@@ -74,4 +77,69 @@
             </gml:Polygon>
         </Geometry>
     </MSstation>
+    <Amantelbuis>
+        <Handle>5639</Handle>
+        <Materiaal>PVC</Materiaal>
+        <Diameter>110</Diameter>
+        <DatumAanleg>2023-10-10</DatumAanleg>
+        <Status>{{STATUS}}</Status>
+        <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <Thema>ET_LS</Thema>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>875215</GisId>
+        <AssetId>{CF349FEA-642D-43F3-9D36-21F208DEDCB2}</AssetId>
+        <Geometry>
+            <gml:LineString
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:posList>162195.21200000122 498641.21990000084 0 162165.126600001 498617.8828999996 0</gml:posList>
+            </gml:LineString>
+        </Geometry>
+    </Amantelbuis>
+    
+    <MSmof>
+        <Handle>5911</Handle>
+        <DatumAanleg>1971-06-14</DatumAanleg>
+        <Status>{{STATUS}}</Status>
+        <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>53264168</GisId>
+        <AssetId>{D1185DFB-9CF4-42D6-BF83-9F8448E75D68}</AssetId>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:7415">
+                <gml:pos>
+                    170509.942 369699.791 0
+                </gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSmof>
+    <MSoverdrachtspunt>
+        <Handle>55E9</Handle>
+        <DatumAanleg>2024-01-10</DatumAanleg>
+        <Status>{{STATUS}}</Status>
+        <Bedrijfstoestand>{{BEDRIJFSTOESTAND}}</Bedrijfstoestand>
+        <Inmeetwijze>GPS</Inmeetwijze>
+        <Nauwkeurigheid>tot 3cm</Nauwkeurigheid>
+        <Identificatie>MS-0123</Identificatie>
+        <Eigenaar>Netbeheerder</Eigenaar>
+        <Beheerder>Netbeheerder</Beheerder>
+        <GisId>6431</GisId>
+        <AssetId>{39437C1B-1F2C-4D8E-83CF-E55B6B9ADA57}</AssetId>
+        <Hoek>45</Hoek>
+        <Geometry>
+            <gml:Point
+                srsDimension="3"
+                srsName="EPSG:28992">
+                <gml:pos>162155.78379999846 498519.8258999996 0</gml:pos>
+            </gml:Point>
+        </Geometry>
+    </MSoverdrachtspunt>
 </NLCSnetbeheerType>

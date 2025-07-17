@@ -34,10 +34,15 @@
         <active pattern="v11-gisid-assetid-check"/>
     </phase>
     
+    <phase id="R.6">
+        <active pattern="v11-elec-assets-have-measurement-details"/>
+    </phase>
+    
     <phase id="R.7">
         <active pattern="v11-cables-have-subnettype"/>
     </phase>
 
+    
     <xsl:include href="xsl_functions/global_functions/config_functions.xsl"/>
     <xsl:include href="xsl_functions/helper_functions/helper_functions.xsl"/>
     <xsl:include href="xsl_functions/geometry_functions/2d_geometry_functions.xsl"/>
@@ -57,5 +62,6 @@
     <include href="patterns/geometrie/areas_meet_demands.sch"/>
     <include href="patterns/geometrie/lines_meet_demands.sch"/>
     <include href="patterns/verplichte_waardes/gisid_assetid_check.sch"/>
+    <include href="patterns/verplichte_waardes/elec_assets_have_measurement_details.sch"/>
     <include href="patterns/verplichte_waardes/cables_have_subnettype.sch"/>
 </schema>
