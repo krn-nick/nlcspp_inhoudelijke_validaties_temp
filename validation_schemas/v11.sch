@@ -14,11 +14,11 @@
     <ns prefix="nlcs" uri="NLCSnetbeheer"/>
     
     <phase id="R.1">
-        <active pattern="v11-structure-aprojectreferentie-has-other-objects"/>
+        <active pattern="v11-aprojectreferentie-has-other-objects"/>
     </phase>
 
     <phase id="R.2">
-        <active pattern="v11-structure-statuses-allowed-for-tekening-type"/>
+        <active pattern="v11-statuses-allowed-for-tekening-type"/>
     </phase>
 
     <phase id="R.3">
@@ -26,10 +26,18 @@
     </phase>
     
     <phase id="R.4">
-        <active pattern="r4-lines-meet-demand"/>
-        <active pattern="r4-areas-meet-demand"/>
+        <active pattern="v11-areas-meet-demands"/>
+        <active pattern="v11-lines-meet-demands"/>
+    </phase>
+
+    <phase id="R.5">
+        <active pattern="v11-gisid-assetid-check"/>
     </phase>
     
+    <phase id="R.7">
+        <active pattern="v11-cables-have-subnettype"/>
+    </phase>
+
     <xsl:include href="xsl_functions/global_functions/config_functions.xsl"/>
     <xsl:include href="xsl_functions/helper_functions/helper_functions.xsl"/>
     <xsl:include href="xsl_functions/geometry_functions/2d_geometry_functions.xsl"/>
@@ -43,9 +51,11 @@
     <xsl:include href="xsl_functions/geometry_functions/depth_functions.xsl"/>
     <xsl:include href="xsl_functions/geometry_functions/depth_interface_functions.xsl"/>
     
-    <include href="patterns/aprojectreferentie/v11/structure_aprojectreferentie_has_other_objects.sch"/>
-    <include href="patterns/status/v11/structure_statuses_allowed_for_tekening_type.sch"/>
-    <include href="patterns/aprojectreferentie/v11/complex_all_geometries_in_project_area.sch"/>
-    <include href="patterns/general_line/v11/r4-lines-meet-demands.sch"/>
-    <include href="patterns/general_area/v11/r4-areas-meet-demands.sch"/>
+    <include href="patterns/bestand/v11/aprojectreferentie_has_other_objects.sch"/>
+    <include href="patterns/bestand/v11/statuses_allowed_for_tekening_type.sch"/>
+    <include href="patterns/geometrie/all_geometries_in_project_area.sch"/>
+    <include href="patterns/geometrie/areas_meet_demands.sch"/>
+    <include href="patterns/geometrie/lines_meet_demands.sch"/>
+    <include href="patterns/verplichte_waardes/gisid_assetid_check.sch"/>
+    <include href="patterns/verplichte_waardes/cables_have_subnettype.sch"/>
 </schema>
