@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="r4-areas-meet-demand">
+<pattern xmlns ="http://purl.oclc.org/dsdl/schematron" id="v11-areas-meet-demands">
      <rule context="//nlcs:ABeschermingvlak | //nlcs:MSstation">
           <let name="handle"
                value="nlcs:Handle"/>
